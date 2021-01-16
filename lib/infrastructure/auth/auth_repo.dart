@@ -1,7 +1,6 @@
 import 'package:ad_earn/domain/auth/i_auth_repo.dart';
 import 'package:ad_earn/domain/auth/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 
@@ -9,9 +8,8 @@ import 'package:injectable/injectable.dart';
 class AuthRepo implements IAuthRepo {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
-  final FacebookAuth _facebookAuth;
 
-  AuthRepo(this._firebaseAuth, this._googleSignIn, this._facebookAuth);
+  AuthRepo(this._firebaseAuth, this._googleSignIn);
 
   @override
   Future<void> logOut() async {
@@ -36,6 +34,18 @@ class AuthRepo implements IAuthRepo {
   }
 
   @override
-  // TODO: implement user
-  Stream<AppUser> get user => throw UnimplementedError();
+  Stream<AppUser> get user => _firebaseAuth
+      .authStateChanges()
+      .map((firebaseUser) => firebaseUser.toDomain);
+}
+
+extension on User {
+  AppUser get toDomain {
+    return AppUser(
+      userId: uid,
+      email: email,
+      name: displayName,
+      photoUrl: photoURL,
+    );
+  }
 }

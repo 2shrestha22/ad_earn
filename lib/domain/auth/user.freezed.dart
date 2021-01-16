@@ -108,7 +108,7 @@ class __$AppUserCopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_AppUser implements _AppUser {
+class _$_AppUser extends _AppUser with DiagnosticableTreeMixin {
   const _$_AppUser(
       {@required this.userId,
       @required this.email,
@@ -117,7 +117,8 @@ class _$_AppUser implements _AppUser {
       : assert(userId != null),
         assert(email != null),
         assert(name != null),
-        assert(photoUrl != null);
+        assert(photoUrl != null),
+        super._();
 
   @override
   final String userId;
@@ -129,8 +130,19 @@ class _$_AppUser implements _AppUser {
   final String photoUrl;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AppUser(userId: $userId, email: $email, name: $name, photoUrl: $photoUrl)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AppUser'))
+      ..add(DiagnosticsProperty('userId', userId))
+      ..add(DiagnosticsProperty('email', email))
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('photoUrl', photoUrl));
   }
 
   @override
@@ -162,7 +174,8 @@ class _$_AppUser implements _AppUser {
       __$AppUserCopyWithImpl<_AppUser>(this, _$identity);
 }
 
-abstract class _AppUser implements AppUser {
+abstract class _AppUser extends AppUser {
+  const _AppUser._() : super._();
   const factory _AppUser(
       {@required String userId,
       @required String email,
