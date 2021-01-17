@@ -34,9 +34,9 @@ class AuthRepo implements IAuthRepo {
   }
 
   @override
-  Stream<AppUser> get user => _firebaseAuth
-      .authStateChanges()
-      .map((firebaseUser) => firebaseUser.toDomain);
+  Stream<AppUser> get user =>
+      _firebaseAuth.authStateChanges().map((firebaseUser) =>
+          firebaseUser == null ? AppUser.empty() : firebaseUser.toDomain);
 }
 
 extension on User {

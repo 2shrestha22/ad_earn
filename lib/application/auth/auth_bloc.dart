@@ -16,8 +16,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   StreamSubscription<AppUser> _userSubscription;
 
   AuthBloc(this._authRepo) : super(const _Initial()) {
-    _userSubscription = _authRepo.user
-        .listen((user) => add(AuthEvent.authenticationUserChanged(user: user)));
+    _userSubscription = _authRepo.user.listen(
+      (user) {
+        add(AuthEvent.authenticationUserChanged(user: user));
+      },
+    );
   }
 
   @override
@@ -28,10 +31,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       started: (e) async* {},
       authenticationUserChanged: (event) async* {
         //TODO it is not working
-        yield _mapAuthenticationUserChangedToState(event);
-        // yield event.user != AppUser.empty()
-        //     ? AuthState.authenticated(event.user)
-        //     : const AuthState.unauthenticated();
+        // yield _mapAuthenticationUserChangedToState(event);
+        yield event.user != AppUser.empty()
+            ? AuthState.authenticated(event.user)
+            : const AuthState.unauthenticated();
       },
     );
   }
