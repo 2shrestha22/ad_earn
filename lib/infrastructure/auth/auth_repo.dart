@@ -1,3 +1,4 @@
+import 'package:ad_earn/domain/auth/auth_failures.dart';
 import 'package:ad_earn/domain/auth/i_auth_repo.dart';
 import 'package:ad_earn/domain/auth/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -5,6 +6,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IAuthRepo)
+// @Injectable(as: IAuthRepo)
 class AuthRepo implements IAuthRepo {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
@@ -28,9 +30,18 @@ class AuthRepo implements IAuthRepo {
   }
 
   @override
-  Future<void> loginWithGoogle() {
-    // TODO: implement loginWithGoogle
-    throw UnimplementedError();
+  Future<void> loginWithGoogle() async {
+    try {
+      final googleUser = await _googleSignIn.signIn();
+      final googleAuth = await googleUser.authentication;
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+      await _firebaseAuth.signInWithCredential(credential);
+    } on Exception {
+      throw const AuthFailure.signInFailure();
+    }
   }
 
   @override

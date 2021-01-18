@@ -13,6 +13,7 @@ import 'application/auth/auth_bloc.dart';
 import 'infrastructure/auth/auth_repo.dart';
 import 'infrastructure/auth/firebase_injectable_module.dart';
 import 'domain/auth/i_auth_repo.dart';
+import 'application/auth/login/login_cubit.dart';
 
 /// adds generated dependencies
 /// to the provided [GetIt] instance
@@ -28,6 +29,7 @@ GetIt $initGetIt(
   gh.factory<GoogleSignIn>(() => firebaseInjectableModule.googleSignIn);
   gh.lazySingleton<IAuthRepo>(
       () => AuthRepo(get<FirebaseAuth>(), get<GoogleSignIn>()));
+  gh.factory<LoginCubit>(() => LoginCubit(get<IAuthRepo>()));
   gh.factory<AuthBloc>(() => AuthBloc(get<IAuthRepo>()));
   return get;
 }

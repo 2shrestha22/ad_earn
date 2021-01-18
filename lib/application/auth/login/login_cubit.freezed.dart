@@ -14,8 +14,15 @@ class _$LoginStateTearOff {
   const _$LoginStateTearOff();
 
 // ignore: unused_element
-  _Initial initial() {
-    return const _Initial();
+  _LoginState call(
+      {@required Email email,
+      @required Password password,
+      @required FormzStatus status}) {
+    return _LoginState(
+      email: email,
+      password: password,
+      status: status,
+    );
   }
 }
 
@@ -25,24 +32,12 @@ const $LoginState = _$LoginStateTearOff();
 
 /// @nodoc
 mixin _$LoginState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-  });
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    @required TResult orElse(),
-  });
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-  });
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    @required TResult orElse(),
-  });
+  Email get email;
+  Password get password;
+  FormzStatus get status;
+
+  @JsonKey(ignore: true)
+  $LoginStateCopyWith<LoginState> get copyWith;
 }
 
 /// @nodoc
@@ -50,6 +45,7 @@ abstract class $LoginStateCopyWith<$Res> {
   factory $LoginStateCopyWith(
           LoginState value, $Res Function(LoginState) then) =
       _$LoginStateCopyWithImpl<$Res>;
+  $Res call({Email email, Password password, FormzStatus status});
 }
 
 /// @nodoc
@@ -59,86 +55,113 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
   final LoginState _value;
   // ignore: unused_field
   final $Res Function(LoginState) _then;
-}
-
-/// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  $Res call({
+    Object email = freezed,
+    Object password = freezed,
+    Object status = freezed,
+  }) {
+    return _then(_value.copyWith(
+      email: email == freezed ? _value.email : email as Email,
+      password: password == freezed ? _value.password : password as Password,
+      status: status == freezed ? _value.status : status as FormzStatus,
+    ));
+  }
 }
 
 /// @nodoc
-class _$_Initial implements _Initial {
-  const _$_Initial();
+abstract class _$LoginStateCopyWith<$Res> implements $LoginStateCopyWith<$Res> {
+  factory _$LoginStateCopyWith(
+          _LoginState value, $Res Function(_LoginState) then) =
+      __$LoginStateCopyWithImpl<$Res>;
+  @override
+  $Res call({Email email, Password password, FormzStatus status});
+}
+
+/// @nodoc
+class __$LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
+    implements _$LoginStateCopyWith<$Res> {
+  __$LoginStateCopyWithImpl(
+      _LoginState _value, $Res Function(_LoginState) _then)
+      : super(_value, (v) => _then(v as _LoginState));
+
+  @override
+  _LoginState get _value => super._value as _LoginState;
+
+  @override
+  $Res call({
+    Object email = freezed,
+    Object password = freezed,
+    Object status = freezed,
+  }) {
+    return _then(_LoginState(
+      email: email == freezed ? _value.email : email as Email,
+      password: password == freezed ? _value.password : password as Password,
+      status: status == freezed ? _value.status : status as FormzStatus,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_LoginState implements _LoginState {
+  const _$_LoginState(
+      {@required this.email, @required this.password, @required this.status})
+      : assert(email != null),
+        assert(password != null),
+        assert(status != null);
+
+  @override
+  final Email email;
+  @override
+  final Password password;
+  @override
+  final FormzStatus status;
 
   @override
   String toString() {
-    return 'LoginState.initial()';
+    return 'LoginState(email: $email, password: $password, status: $status)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other is _LoginState &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)) &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(email) ^
+      const DeepCollectionEquality().hash(password) ^
+      const DeepCollectionEquality().hash(status);
 
+  @JsonKey(ignore: true)
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-  }) {
-    assert(initial != null);
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-  }) {
-    assert(initial != null);
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
+  _$LoginStateCopyWith<_LoginState> get copyWith =>
+      __$LoginStateCopyWithImpl<_LoginState>(this, _$identity);
 }
 
-abstract class _Initial implements LoginState {
-  const factory _Initial() = _$_Initial;
+abstract class _LoginState implements LoginState {
+  const factory _LoginState(
+      {@required Email email,
+      @required Password password,
+      @required FormzStatus status}) = _$_LoginState;
+
+  @override
+  Email get email;
+  @override
+  Password get password;
+  @override
+  FormzStatus get status;
+  @override
+  @JsonKey(ignore: true)
+  _$LoginStateCopyWith<_LoginState> get copyWith;
 }
