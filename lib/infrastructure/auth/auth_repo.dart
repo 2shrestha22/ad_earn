@@ -1,6 +1,6 @@
 import 'package:ad_earn/domain/auth/auth_failures.dart';
 import 'package:ad_earn/domain/auth/i_auth_repo.dart';
-import 'package:ad_earn/domain/auth/user.dart';
+import 'package:ad_earn/domain/user/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';

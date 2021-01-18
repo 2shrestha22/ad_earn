@@ -24,6 +24,11 @@ class _$AuthEventTearOff {
       user: user,
     );
   }
+
+// ignore: unused_element
+  _LogoutRequested logoutRequested() {
+    return const _LogoutRequested();
+  }
 }
 
 /// @nodoc
@@ -36,11 +41,13 @@ mixin _$AuthEvent {
   TResult when<TResult extends Object>({
     @required TResult started(),
     @required TResult authenticationUserChanged(AppUser user),
+    @required TResult logoutRequested(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult started(),
     TResult authenticationUserChanged(AppUser user),
+    TResult logoutRequested(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -48,11 +55,13 @@ mixin _$AuthEvent {
     @required TResult started(_Started value),
     @required
         TResult authenticationUserChanged(_AuthenticationUserChanged value),
+    @required TResult logoutRequested(_LogoutRequested value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult started(_Started value),
     TResult authenticationUserChanged(_AuthenticationUserChanged value),
+    TResult logoutRequested(_LogoutRequested value),
     @required TResult orElse(),
   });
 }
@@ -110,9 +119,11 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object>({
     @required TResult started(),
     @required TResult authenticationUserChanged(AppUser user),
+    @required TResult logoutRequested(),
   }) {
     assert(started != null);
     assert(authenticationUserChanged != null);
+    assert(logoutRequested != null);
     return started();
   }
 
@@ -121,6 +132,7 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object>({
     TResult started(),
     TResult authenticationUserChanged(AppUser user),
+    TResult logoutRequested(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -136,9 +148,11 @@ class _$_Started implements _Started {
     @required TResult started(_Started value),
     @required
         TResult authenticationUserChanged(_AuthenticationUserChanged value),
+    @required TResult logoutRequested(_LogoutRequested value),
   }) {
     assert(started != null);
     assert(authenticationUserChanged != null);
+    assert(logoutRequested != null);
     return started(this);
   }
 
@@ -147,6 +161,7 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object>({
     TResult started(_Started value),
     TResult authenticationUserChanged(_AuthenticationUserChanged value),
+    TResult logoutRequested(_LogoutRequested value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -239,9 +254,11 @@ class _$_AuthenticationUserChanged implements _AuthenticationUserChanged {
   TResult when<TResult extends Object>({
     @required TResult started(),
     @required TResult authenticationUserChanged(AppUser user),
+    @required TResult logoutRequested(),
   }) {
     assert(started != null);
     assert(authenticationUserChanged != null);
+    assert(logoutRequested != null);
     return authenticationUserChanged(user);
   }
 
@@ -250,6 +267,7 @@ class _$_AuthenticationUserChanged implements _AuthenticationUserChanged {
   TResult maybeWhen<TResult extends Object>({
     TResult started(),
     TResult authenticationUserChanged(AppUser user),
+    TResult logoutRequested(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -265,9 +283,11 @@ class _$_AuthenticationUserChanged implements _AuthenticationUserChanged {
     @required TResult started(_Started value),
     @required
         TResult authenticationUserChanged(_AuthenticationUserChanged value),
+    @required TResult logoutRequested(_LogoutRequested value),
   }) {
     assert(started != null);
     assert(authenticationUserChanged != null);
+    assert(logoutRequested != null);
     return authenticationUserChanged(this);
   }
 
@@ -276,6 +296,7 @@ class _$_AuthenticationUserChanged implements _AuthenticationUserChanged {
   TResult maybeMap<TResult extends Object>({
     TResult started(_Started value),
     TResult authenticationUserChanged(_AuthenticationUserChanged value),
+    TResult logoutRequested(_LogoutRequested value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -293,6 +314,103 @@ abstract class _AuthenticationUserChanged implements AuthEvent {
   AppUser get user;
   @JsonKey(ignore: true)
   _$AuthenticationUserChangedCopyWith<_AuthenticationUserChanged> get copyWith;
+}
+
+/// @nodoc
+abstract class _$LogoutRequestedCopyWith<$Res> {
+  factory _$LogoutRequestedCopyWith(
+          _LogoutRequested value, $Res Function(_LogoutRequested) then) =
+      __$LogoutRequestedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LogoutRequestedCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res>
+    implements _$LogoutRequestedCopyWith<$Res> {
+  __$LogoutRequestedCopyWithImpl(
+      _LogoutRequested _value, $Res Function(_LogoutRequested) _then)
+      : super(_value, (v) => _then(v as _LogoutRequested));
+
+  @override
+  _LogoutRequested get _value => super._value as _LogoutRequested;
+}
+
+/// @nodoc
+class _$_LogoutRequested implements _LogoutRequested {
+  const _$_LogoutRequested();
+
+  @override
+  String toString() {
+    return 'AuthEvent.logoutRequested()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _LogoutRequested);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult started(),
+    @required TResult authenticationUserChanged(AppUser user),
+    @required TResult logoutRequested(),
+  }) {
+    assert(started != null);
+    assert(authenticationUserChanged != null);
+    assert(logoutRequested != null);
+    return logoutRequested();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult started(),
+    TResult authenticationUserChanged(AppUser user),
+    TResult logoutRequested(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (logoutRequested != null) {
+      return logoutRequested();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult started(_Started value),
+    @required
+        TResult authenticationUserChanged(_AuthenticationUserChanged value),
+    @required TResult logoutRequested(_LogoutRequested value),
+  }) {
+    assert(started != null);
+    assert(authenticationUserChanged != null);
+    assert(logoutRequested != null);
+    return logoutRequested(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult started(_Started value),
+    TResult authenticationUserChanged(_AuthenticationUserChanged value),
+    TResult logoutRequested(_LogoutRequested value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (logoutRequested != null) {
+      return logoutRequested(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LogoutRequested implements AuthEvent {
+  const factory _LogoutRequested() = _$_LogoutRequested;
 }
 
 /// @nodoc
