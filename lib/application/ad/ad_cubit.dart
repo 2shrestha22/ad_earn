@@ -19,18 +19,23 @@ class AdCubit extends Cubit<AdState> {
 
     try {
       await RewardedVideoAd.instance.load(adUnitId: CONFIG.rewardedAdUnitId);
-    } catch (e) {}
+    } catch (e) {
+      emit(_Initial());
+      throw Exception(e);
+    }
 
     RewardedVideoAd.instance.listener = (RewardedVideoAdEvent event,
         {String rewardType, int rewardAmount}) async {
       if (event == RewardedVideoAdEvent.rewarded) {
-        print(rewardAmount);
-        _adRepo.updateCoin(5);
+        _adRepo.updateCoin(rewardAmount);
       }
-
       if (event == RewardedVideoAdEvent.loaded) {
         await RewardedVideoAd.instance.show();
         emit(_Initial());
+      }
+      if (event == RewardedVideoAdEvent.failedToLoad) {
+        emit(_AdLoadFailure());
+        // emit(_Initial());
       }
     };
   }

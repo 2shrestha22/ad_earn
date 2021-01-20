@@ -17,13 +17,6 @@ class _$UserEventTearOff {
   _Started started() {
     return const _Started();
   }
-
-// ignore: unused_element
-  _AddCoin addCoin(int coin) {
-    return _AddCoin(
-      coin,
-    );
-  }
 }
 
 /// @nodoc
@@ -35,23 +28,19 @@ mixin _$UserEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult started(),
-    @required TResult addCoin(int coin),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult started(),
-    TResult addCoin(int coin),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult started(_Started value),
-    @required TResult addCoin(_AddCoin value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult started(_Started value),
-    TResult addCoin(_AddCoin value),
     @required TResult orElse(),
   });
 }
@@ -108,10 +97,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult started(),
-    @required TResult addCoin(int coin),
   }) {
     assert(started != null);
-    assert(addCoin != null);
     return started();
   }
 
@@ -119,7 +106,6 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult started(),
-    TResult addCoin(int coin),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -133,10 +119,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult started(_Started value),
-    @required TResult addCoin(_AddCoin value),
   }) {
     assert(started != null);
-    assert(addCoin != null);
     return started(this);
   }
 
@@ -144,7 +128,6 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult started(_Started value),
-    TResult addCoin(_AddCoin value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -160,127 +143,8 @@ abstract class _Started implements UserEvent {
 }
 
 /// @nodoc
-abstract class _$AddCoinCopyWith<$Res> {
-  factory _$AddCoinCopyWith(_AddCoin value, $Res Function(_AddCoin) then) =
-      __$AddCoinCopyWithImpl<$Res>;
-  $Res call({int coin});
-}
-
-/// @nodoc
-class __$AddCoinCopyWithImpl<$Res> extends _$UserEventCopyWithImpl<$Res>
-    implements _$AddCoinCopyWith<$Res> {
-  __$AddCoinCopyWithImpl(_AddCoin _value, $Res Function(_AddCoin) _then)
-      : super(_value, (v) => _then(v as _AddCoin));
-
-  @override
-  _AddCoin get _value => super._value as _AddCoin;
-
-  @override
-  $Res call({
-    Object coin = freezed,
-  }) {
-    return _then(_AddCoin(
-      coin == freezed ? _value.coin : coin as int,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_AddCoin implements _AddCoin {
-  const _$_AddCoin(this.coin) : assert(coin != null);
-
-  @override
-  final int coin;
-
-  @override
-  String toString() {
-    return 'UserEvent.addCoin(coin: $coin)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _AddCoin &&
-            (identical(other.coin, coin) ||
-                const DeepCollectionEquality().equals(other.coin, coin)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(coin);
-
-  @JsonKey(ignore: true)
-  @override
-  _$AddCoinCopyWith<_AddCoin> get copyWith =>
-      __$AddCoinCopyWithImpl<_AddCoin>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult started(),
-    @required TResult addCoin(int coin),
-  }) {
-    assert(started != null);
-    assert(addCoin != null);
-    return addCoin(coin);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult started(),
-    TResult addCoin(int coin),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (addCoin != null) {
-      return addCoin(coin);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult started(_Started value),
-    @required TResult addCoin(_AddCoin value),
-  }) {
-    assert(started != null);
-    assert(addCoin != null);
-    return addCoin(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult started(_Started value),
-    TResult addCoin(_AddCoin value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (addCoin != null) {
-      return addCoin(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _AddCoin implements UserEvent {
-  const factory _AddCoin(int coin) = _$_AddCoin;
-
-  int get coin;
-  @JsonKey(ignore: true)
-  _$AddCoinCopyWith<_AddCoin> get copyWith;
-}
-
-/// @nodoc
 class _$UserStateTearOff {
   const _$UserStateTearOff();
-
-// ignore: unused_element
-  _Initial initial() {
-    return const _Initial();
-  }
 
 // ignore: unused_element
   _LoadInProgress loadInProgress() {
@@ -303,26 +167,22 @@ const $UserState = _$UserStateTearOff();
 mixin _$UserState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initial(),
     @required TResult loadInProgress(),
     @required TResult loadInSuccess(UserData userData),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
     TResult loadInProgress(),
     TResult loadInSuccess(UserData userData),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
     @required TResult loadInProgress(_LoadInProgress value),
     @required TResult loadInSuccess(_LoadInSuccess value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
     TResult loadInProgress(_LoadInProgress value),
     TResult loadInSuccess(_LoadInSuccess value),
     @required TResult orElse(),
@@ -342,100 +202,6 @@ class _$UserStateCopyWithImpl<$Res> implements $UserStateCopyWith<$Res> {
   final UserState _value;
   // ignore: unused_field
   final $Res Function(UserState) _then;
-}
-
-/// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
-}
-
-/// @nodoc
-class _$_Initial implements _Initial {
-  const _$_Initial();
-
-  @override
-  String toString() {
-    return 'UserState.initial()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadInSuccess(UserData userData),
-  }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadInSuccess != null);
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadInSuccess(UserData userData),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadInSuccess(_LoadInSuccess value),
-  }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadInSuccess != null);
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadInSuccess(_LoadInSuccess value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements UserState {
-  const factory _Initial() = _$_Initial;
 }
 
 /// @nodoc
@@ -476,11 +242,9 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initial(),
     @required TResult loadInProgress(),
     @required TResult loadInSuccess(UserData userData),
   }) {
-    assert(initial != null);
     assert(loadInProgress != null);
     assert(loadInSuccess != null);
     return loadInProgress();
@@ -489,7 +253,6 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
     TResult loadInProgress(),
     TResult loadInSuccess(UserData userData),
     @required TResult orElse(),
@@ -504,11 +267,9 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
     @required TResult loadInProgress(_LoadInProgress value),
     @required TResult loadInSuccess(_LoadInSuccess value),
   }) {
-    assert(initial != null);
     assert(loadInProgress != null);
     assert(loadInSuccess != null);
     return loadInProgress(this);
@@ -517,7 +278,6 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
     TResult loadInProgress(_LoadInProgress value),
     TResult loadInSuccess(_LoadInSuccess value),
     @required TResult orElse(),
@@ -607,11 +367,9 @@ class _$_LoadInSuccess implements _LoadInSuccess {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initial(),
     @required TResult loadInProgress(),
     @required TResult loadInSuccess(UserData userData),
   }) {
-    assert(initial != null);
     assert(loadInProgress != null);
     assert(loadInSuccess != null);
     return loadInSuccess(userData);
@@ -620,7 +378,6 @@ class _$_LoadInSuccess implements _LoadInSuccess {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
     TResult loadInProgress(),
     TResult loadInSuccess(UserData userData),
     @required TResult orElse(),
@@ -635,11 +392,9 @@ class _$_LoadInSuccess implements _LoadInSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
     @required TResult loadInProgress(_LoadInProgress value),
     @required TResult loadInSuccess(_LoadInSuccess value),
   }) {
-    assert(initial != null);
     assert(loadInProgress != null);
     assert(loadInSuccess != null);
     return loadInSuccess(this);
@@ -648,7 +403,6 @@ class _$_LoadInSuccess implements _LoadInSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
     TResult loadInProgress(_LoadInProgress value),
     TResult loadInSuccess(_LoadInSuccess value),
     @required TResult orElse(),

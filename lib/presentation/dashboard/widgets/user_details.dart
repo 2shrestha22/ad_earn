@@ -1,4 +1,5 @@
 import 'package:ad_earn/application/user/user_bloc.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,19 +13,27 @@ class UserDetailsView extends StatelessWidget {
     return BlocBuilder<UserBloc, UserState>(
       builder: (context, state) {
         return state.map(
-          initial: (_) => CircularProgressIndicator(),
           loadInProgress: (_) => CircularProgressIndicator(),
           loadInSuccess: (s) {
             return Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
+                  fit: BoxFit.fill,
                   image: AssetImage('assets/images/brush_stroke.png'),
                 ),
               ),
               child: Column(
                 children: <Widget>[
                   Container(
-                    decoration: BoxDecoration(),
+                    width: 70,
+                    height: 70,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: CachedNetworkImageProvider(s.userData.photoUrl),
+                      ),
+                    ),
                   ),
 
                   // Text(

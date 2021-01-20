@@ -13,7 +13,7 @@ part 'user_bloc.freezed.dart';
 
 @injectable
 class UserBloc extends Bloc<UserEvent, UserState> {
-  UserBloc(this._userRepo) : super(const _Initial());
+  UserBloc(this._userRepo) : super(const _LoadInProgress());
 
   final IUserRepo _userRepo;
   // StreamSubscription _authSubscription;
@@ -28,12 +28,6 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         yield* _userRepo
             .getUserData()
             .map((userData) => UserState.loadInSuccess(userData));
-      },
-      addCoin: (e) async* {
-        yield UserState.loadInProgress();
-
-        await _userRepo.updateCoin(e.coin);
-        yield this.state;
       },
     );
   }

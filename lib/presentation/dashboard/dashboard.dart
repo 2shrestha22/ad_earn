@@ -4,6 +4,7 @@ import 'package:ad_earn/application/user/user_bloc.dart';
 import 'package:ad_earn/presentation/dashboard/widgets/actions.dart';
 import 'package:ad_earn/presentation/dashboard/widgets/user_details.dart';
 import 'package:ad_earn/presentation/dashboard/widgets/watch_ad_button.dart';
+import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -99,7 +100,38 @@ class DashBoardPage extends StatelessWidget {
                                 style: TextStyle(
                                     fontSize: 10, fontStyle: FontStyle.italic),
                               ),
-                              WatchAdButton(),
+                              BlocConsumer<AdCubit, AdState>(
+                                listener: (context, state) {
+                                  state.maybeMap(
+                                    orElse: () {},
+                                    adLoadFailure: (_) =>
+                                        FlushbarHelper.createError(
+                                            message:
+                                                'You have viewed to many ads, see FAQ')
+                                          ..show(context),
+                                  );
+                                },
+                                builder: (context, state) {
+                                  return state.map(
+                                    initial: (_) => WatchAdButton(
+                                      onTap: () async => await context
+                                          .read<AdCubit>()
+                                          .watchAdBtnPressed(),
+                                      text: 'WATCH VIDEO FOR COINS',
+                                    ),
+                                    adLoadInProgress: (_) => WatchAdButton(
+                                      onTap: null,
+                                      text: 'LOADING AD',
+                                    ),
+                                    adLoadFailure: (_) => WatchAdButton(
+                                      onTap: () async => await context
+                                          .read<AdCubit>()
+                                          .watchAdBtnPressed(),
+                                      text: 'RETRY',
+                                    ),
+                                  );
+                                },
+                              )
                             ],
                           ),
                         ),
@@ -117,8 +149,8 @@ class DashBoardPage extends StatelessWidget {
                           children: [
                             TableRow(children: [
                               DashboardActions(
-                                  iconPath: 'assets/images/ic_send.png',
-                                  desc: 'Invite Friends'),
+                                  iconPath: 'assets/images/ic_faq.png',
+                                  desc: 'Frequently Asked Questions'),
                               DashboardActions(
                                   iconPath: 'assets/images/ic_money.png',
                                   desc: 'Redeem'),

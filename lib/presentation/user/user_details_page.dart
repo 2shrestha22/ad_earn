@@ -9,9 +9,6 @@ class UserDetailsPage extends StatelessWidget {
       child: BlocBuilder<UserBloc, UserState>(
         builder: (context, state) {
           return state.map(
-            initial: (_) {
-              return CircularProgressIndicator();
-            },
             loadInProgress: (_) {
               return CircularProgressIndicator();
             },
