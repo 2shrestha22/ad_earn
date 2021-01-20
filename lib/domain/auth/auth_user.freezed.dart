@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'user.dart';
+part of 'auth_user.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,8 +10,8 @@ part of 'user.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$AppUserTearOff {
-  const _$AppUserTearOff();
+class _$AuthUserTearOff {
+  const _$AuthUserTearOff();
 
 // ignore: unused_element
   _AppUser call(
@@ -30,33 +30,33 @@ class _$AppUserTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $AppUser = _$AppUserTearOff();
+const $AuthUser = _$AuthUserTearOff();
 
 /// @nodoc
-mixin _$AppUser {
+mixin _$AuthUser {
   String get userId;
   String get email;
   String get name;
   String get photoUrl;
 
   @JsonKey(ignore: true)
-  $AppUserCopyWith<AppUser> get copyWith;
+  $AuthUserCopyWith<AuthUser> get copyWith;
 }
 
 /// @nodoc
-abstract class $AppUserCopyWith<$Res> {
-  factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) =
-      _$AppUserCopyWithImpl<$Res>;
+abstract class $AuthUserCopyWith<$Res> {
+  factory $AuthUserCopyWith(AuthUser value, $Res Function(AuthUser) then) =
+      _$AuthUserCopyWithImpl<$Res>;
   $Res call({String userId, String email, String name, String photoUrl});
 }
 
 /// @nodoc
-class _$AppUserCopyWithImpl<$Res> implements $AppUserCopyWith<$Res> {
-  _$AppUserCopyWithImpl(this._value, this._then);
+class _$AuthUserCopyWithImpl<$Res> implements $AuthUserCopyWith<$Res> {
+  _$AuthUserCopyWithImpl(this._value, this._then);
 
-  final AppUser _value;
+  final AuthUser _value;
   // ignore: unused_field
-  final $Res Function(AppUser) _then;
+  final $Res Function(AuthUser) _then;
 
   @override
   $Res call({
@@ -75,7 +75,7 @@ class _$AppUserCopyWithImpl<$Res> implements $AppUserCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AppUserCopyWith<$Res> implements $AppUserCopyWith<$Res> {
+abstract class _$AppUserCopyWith<$Res> implements $AuthUserCopyWith<$Res> {
   factory _$AppUserCopyWith(_AppUser value, $Res Function(_AppUser) then) =
       __$AppUserCopyWithImpl<$Res>;
   @override
@@ -83,7 +83,7 @@ abstract class _$AppUserCopyWith<$Res> implements $AppUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AppUserCopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res>
+class __$AppUserCopyWithImpl<$Res> extends _$AuthUserCopyWithImpl<$Res>
     implements _$AppUserCopyWith<$Res> {
   __$AppUserCopyWithImpl(_AppUser _value, $Res Function(_AppUser) _then)
       : super(_value, (v) => _then(v as _AppUser));
@@ -131,14 +131,14 @@ class _$_AppUser extends _AppUser with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AppUser(userId: $userId, email: $email, name: $name, photoUrl: $photoUrl)';
+    return 'AuthUser(userId: $userId, email: $email, name: $name, photoUrl: $photoUrl)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'AppUser'))
+      ..add(DiagnosticsProperty('type', 'AuthUser'))
       ..add(DiagnosticsProperty('userId', userId))
       ..add(DiagnosticsProperty('email', email))
       ..add(DiagnosticsProperty('name', name))
@@ -174,7 +174,7 @@ class _$_AppUser extends _AppUser with DiagnosticableTreeMixin {
       __$AppUserCopyWithImpl<_AppUser>(this, _$identity);
 }
 
-abstract class _AppUser extends AppUser {
+abstract class _AppUser extends AuthUser {
   const _AppUser._() : super._();
   const factory _AppUser(
       {@required String userId,

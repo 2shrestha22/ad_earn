@@ -1,6 +1,6 @@
 import 'package:ad_earn/application/auth/auth_bloc.dart';
 import 'package:ad_earn/injection.dart';
-import 'package:ad_earn/presentation/homepage/homepage.dart';
+import 'package:ad_earn/presentation/dashboard/dashboard.dart';
 import 'package:ad_earn/presentation/login/login_page.dart';
 import 'package:ad_earn/presentation/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +23,7 @@ class AdEarnApp extends StatelessWidget {
             return state.map(
               initial: (s) => SplashScreen(),
               unauthenticated: (s) => LoginPage(),
-              authenticated: (s) => Homepage(),
+              authenticated: (s) => DashBoardPage(),
             );
           },
         ),

@@ -8,17 +8,33 @@ part of 'user_data.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+UserData _$UserDataFromJson(Map<String, dynamic> json) {
+  return _UserData.fromJson(json);
+}
 
 /// @nodoc
 class _$UserDataTearOff {
   const _$UserDataTearOff();
 
 // ignore: unused_element
-  _UserData call({@required int coin, @required String imageUrl}) {
+  _UserData call(
+      {@required String uid,
+      @required String email,
+      @required String displayName,
+      @required String photoUrl,
+      @required int coin}) {
     return _UserData(
+      uid: uid,
+      email: email,
+      displayName: displayName,
+      photoUrl: photoUrl,
       coin: coin,
-      imageUrl: imageUrl,
     );
+  }
+
+// ignore: unused_element
+  UserData fromJson(Map<String, Object> json) {
+    return UserData.fromJson(json);
   }
 }
 
@@ -28,9 +44,13 @@ const $UserData = _$UserDataTearOff();
 
 /// @nodoc
 mixin _$UserData {
+  String get uid;
+  String get email;
+  String get displayName;
+  String get photoUrl;
   int get coin;
-  String get imageUrl;
 
+  Map<String, dynamic> toJson();
   @JsonKey(ignore: true)
   $UserDataCopyWith<UserData> get copyWith;
 }
@@ -39,7 +59,12 @@ mixin _$UserData {
 abstract class $UserDataCopyWith<$Res> {
   factory $UserDataCopyWith(UserData value, $Res Function(UserData) then) =
       _$UserDataCopyWithImpl<$Res>;
-  $Res call({int coin, String imageUrl});
+  $Res call(
+      {String uid,
+      String email,
+      String displayName,
+      String photoUrl,
+      int coin});
 }
 
 /// @nodoc
@@ -52,12 +77,19 @@ class _$UserDataCopyWithImpl<$Res> implements $UserDataCopyWith<$Res> {
 
   @override
   $Res call({
+    Object uid = freezed,
+    Object email = freezed,
+    Object displayName = freezed,
+    Object photoUrl = freezed,
     Object coin = freezed,
-    Object imageUrl = freezed,
   }) {
     return _then(_value.copyWith(
+      uid: uid == freezed ? _value.uid : uid as String,
+      email: email == freezed ? _value.email : email as String,
+      displayName:
+          displayName == freezed ? _value.displayName : displayName as String,
+      photoUrl: photoUrl == freezed ? _value.photoUrl : photoUrl as String,
       coin: coin == freezed ? _value.coin : coin as int,
-      imageUrl: imageUrl == freezed ? _value.imageUrl : imageUrl as String,
     ));
   }
 }
@@ -67,7 +99,12 @@ abstract class _$UserDataCopyWith<$Res> implements $UserDataCopyWith<$Res> {
   factory _$UserDataCopyWith(_UserData value, $Res Function(_UserData) then) =
       __$UserDataCopyWithImpl<$Res>;
   @override
-  $Res call({int coin, String imageUrl});
+  $Res call(
+      {String uid,
+      String email,
+      String displayName,
+      String photoUrl,
+      int coin});
 }
 
 /// @nodoc
@@ -81,63 +118,116 @@ class __$UserDataCopyWithImpl<$Res> extends _$UserDataCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object uid = freezed,
+    Object email = freezed,
+    Object displayName = freezed,
+    Object photoUrl = freezed,
     Object coin = freezed,
-    Object imageUrl = freezed,
   }) {
     return _then(_UserData(
+      uid: uid == freezed ? _value.uid : uid as String,
+      email: email == freezed ? _value.email : email as String,
+      displayName:
+          displayName == freezed ? _value.displayName : displayName as String,
+      photoUrl: photoUrl == freezed ? _value.photoUrl : photoUrl as String,
       coin: coin == freezed ? _value.coin : coin as int,
-      imageUrl: imageUrl == freezed ? _value.imageUrl : imageUrl as String,
     ));
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_UserData implements _UserData {
-  const _$_UserData({@required this.coin, @required this.imageUrl})
-      : assert(coin != null),
-        assert(imageUrl != null);
+  const _$_UserData(
+      {@required this.uid,
+      @required this.email,
+      @required this.displayName,
+      @required this.photoUrl,
+      @required this.coin})
+      : assert(uid != null),
+        assert(email != null),
+        assert(displayName != null),
+        assert(photoUrl != null),
+        assert(coin != null);
+
+  factory _$_UserData.fromJson(Map<String, dynamic> json) =>
+      _$_$_UserDataFromJson(json);
 
   @override
-  final int coin;
+  final String uid;
   @override
-  final String imageUrl;
+  final String email;
+  @override
+  final String displayName;
+  @override
+  final String photoUrl;
+  @override
+  final int coin;
 
   @override
   String toString() {
-    return 'UserData(coin: $coin, imageUrl: $imageUrl)';
+    return 'UserData(uid: $uid, email: $email, displayName: $displayName, photoUrl: $photoUrl, coin: $coin)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UserData &&
-            (identical(other.coin, coin) ||
-                const DeepCollectionEquality().equals(other.coin, coin)) &&
-            (identical(other.imageUrl, imageUrl) ||
+            (identical(other.uid, uid) ||
+                const DeepCollectionEquality().equals(other.uid, uid)) &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.displayName, displayName) ||
                 const DeepCollectionEquality()
-                    .equals(other.imageUrl, imageUrl)));
+                    .equals(other.displayName, displayName)) &&
+            (identical(other.photoUrl, photoUrl) ||
+                const DeepCollectionEquality()
+                    .equals(other.photoUrl, photoUrl)) &&
+            (identical(other.coin, coin) ||
+                const DeepCollectionEquality().equals(other.coin, coin)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(coin) ^
-      const DeepCollectionEquality().hash(imageUrl);
+      const DeepCollectionEquality().hash(uid) ^
+      const DeepCollectionEquality().hash(email) ^
+      const DeepCollectionEquality().hash(displayName) ^
+      const DeepCollectionEquality().hash(photoUrl) ^
+      const DeepCollectionEquality().hash(coin);
 
   @JsonKey(ignore: true)
   @override
   _$UserDataCopyWith<_UserData> get copyWith =>
       __$UserDataCopyWithImpl<_UserData>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_UserDataToJson(this);
+  }
 }
 
 abstract class _UserData implements UserData {
-  const factory _UserData({@required int coin, @required String imageUrl}) =
-      _$_UserData;
+  const factory _UserData(
+      {@required String uid,
+      @required String email,
+      @required String displayName,
+      @required String photoUrl,
+      @required int coin}) = _$_UserData;
+
+  factory _UserData.fromJson(Map<String, dynamic> json) = _$_UserData.fromJson;
 
   @override
-  int get coin;
+  String get uid;
   @override
-  String get imageUrl;
+  String get email;
+  @override
+  String get displayName;
+  @override
+  String get photoUrl;
+  @override
+  int get coin;
   @override
   @JsonKey(ignore: true)
   _$UserDataCopyWith<_UserData> get copyWith;

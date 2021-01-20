@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:ad_earn/domain/auth/i_auth_repo.dart';
-import 'package:ad_earn/domain/user/user.dart';
+import 'package:ad_earn/domain/auth/auth_user.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -10,10 +10,10 @@ part 'auth_event.dart';
 part 'auth_state.dart';
 part 'auth_bloc.freezed.dart';
 
-@injectable
+@lazySingleton
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final IAuthRepo _authRepo;
-  StreamSubscription<AppUser> _userSubscription;
+  StreamSubscription<AuthUser> _userSubscription;
 
   AuthBloc(this._authRepo) : super(const _Initial()) {
     _userSubscription = _authRepo.user.listen(
@@ -32,7 +32,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         authenticationUserChanged: (event) async* {
           //TODO it is not working
           // yield _mapAuthenticationUserChangedToState(event);
-          yield event.user != AppUser.empty()
+          yield event.user != AuthUser.empty()
               ? AuthState.authenticated(event.user)
               : const AuthState.unauthenticated();
         },

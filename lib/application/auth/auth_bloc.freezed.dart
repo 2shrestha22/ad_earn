@@ -19,7 +19,7 @@ class _$AuthEventTearOff {
   }
 
 // ignore: unused_element
-  _AuthenticationUserChanged authenticationUserChanged({AppUser user}) {
+  _AuthenticationUserChanged authenticationUserChanged({AuthUser user}) {
     return _AuthenticationUserChanged(
       user: user,
     );
@@ -40,13 +40,13 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult started(),
-    @required TResult authenticationUserChanged(AppUser user),
+    @required TResult authenticationUserChanged(AuthUser user),
     @required TResult logoutRequested(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult started(),
-    TResult authenticationUserChanged(AppUser user),
+    TResult authenticationUserChanged(AuthUser user),
     TResult logoutRequested(),
     @required TResult orElse(),
   });
@@ -118,7 +118,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult started(),
-    @required TResult authenticationUserChanged(AppUser user),
+    @required TResult authenticationUserChanged(AuthUser user),
     @required TResult logoutRequested(),
   }) {
     assert(started != null);
@@ -131,7 +131,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult started(),
-    TResult authenticationUserChanged(AppUser user),
+    TResult authenticationUserChanged(AuthUser user),
     TResult logoutRequested(),
     @required TResult orElse(),
   }) {
@@ -181,9 +181,9 @@ abstract class _$AuthenticationUserChangedCopyWith<$Res> {
   factory _$AuthenticationUserChangedCopyWith(_AuthenticationUserChanged value,
           $Res Function(_AuthenticationUserChanged) then) =
       __$AuthenticationUserChangedCopyWithImpl<$Res>;
-  $Res call({AppUser user});
+  $Res call({AuthUser user});
 
-  $AppUserCopyWith<$Res> get user;
+  $AuthUserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -203,16 +203,16 @@ class __$AuthenticationUserChangedCopyWithImpl<$Res>
     Object user = freezed,
   }) {
     return _then(_AuthenticationUserChanged(
-      user: user == freezed ? _value.user : user as AppUser,
+      user: user == freezed ? _value.user : user as AuthUser,
     ));
   }
 
   @override
-  $AppUserCopyWith<$Res> get user {
+  $AuthUserCopyWith<$Res> get user {
     if (_value.user == null) {
       return null;
     }
-    return $AppUserCopyWith<$Res>(_value.user, (value) {
+    return $AuthUserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
     });
   }
@@ -223,7 +223,7 @@ class _$_AuthenticationUserChanged implements _AuthenticationUserChanged {
   const _$_AuthenticationUserChanged({this.user});
 
   @override
-  final AppUser user;
+  final AuthUser user;
 
   @override
   String toString() {
@@ -253,7 +253,7 @@ class _$_AuthenticationUserChanged implements _AuthenticationUserChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult started(),
-    @required TResult authenticationUserChanged(AppUser user),
+    @required TResult authenticationUserChanged(AuthUser user),
     @required TResult logoutRequested(),
   }) {
     assert(started != null);
@@ -266,7 +266,7 @@ class _$_AuthenticationUserChanged implements _AuthenticationUserChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult started(),
-    TResult authenticationUserChanged(AppUser user),
+    TResult authenticationUserChanged(AuthUser user),
     TResult logoutRequested(),
     @required TResult orElse(),
   }) {
@@ -308,10 +308,10 @@ class _$_AuthenticationUserChanged implements _AuthenticationUserChanged {
 }
 
 abstract class _AuthenticationUserChanged implements AuthEvent {
-  const factory _AuthenticationUserChanged({AppUser user}) =
+  const factory _AuthenticationUserChanged({AuthUser user}) =
       _$_AuthenticationUserChanged;
 
-  AppUser get user;
+  AuthUser get user;
   @JsonKey(ignore: true)
   _$AuthenticationUserChangedCopyWith<_AuthenticationUserChanged> get copyWith;
 }
@@ -355,7 +355,7 @@ class _$_LogoutRequested implements _LogoutRequested {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult started(),
-    @required TResult authenticationUserChanged(AppUser user),
+    @required TResult authenticationUserChanged(AuthUser user),
     @required TResult logoutRequested(),
   }) {
     assert(started != null);
@@ -368,7 +368,7 @@ class _$_LogoutRequested implements _LogoutRequested {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult started(),
-    TResult authenticationUserChanged(AppUser user),
+    TResult authenticationUserChanged(AuthUser user),
     TResult logoutRequested(),
     @required TResult orElse(),
   }) {
@@ -428,7 +428,7 @@ class _$AuthStateTearOff {
   }
 
 // ignore: unused_element
-  _Authenticated authenticated(AppUser user) {
+  _Authenticated authenticated(AuthUser user) {
     return _Authenticated(
       user,
     );
@@ -445,13 +445,13 @@ mixin _$AuthState {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult unauthenticated(),
-    @required TResult authenticated(AppUser user),
+    @required TResult authenticated(AuthUser user),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult unauthenticated(),
-    TResult authenticated(AppUser user),
+    TResult authenticated(AuthUser user),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -522,7 +522,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult unauthenticated(),
-    @required TResult authenticated(AppUser user),
+    @required TResult authenticated(AuthUser user),
   }) {
     assert(initial != null);
     assert(unauthenticated != null);
@@ -535,7 +535,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult unauthenticated(),
-    TResult authenticated(AppUser user),
+    TResult authenticated(AuthUser user),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -618,7 +618,7 @@ class _$_Unauthenticated implements _Unauthenticated {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult unauthenticated(),
-    @required TResult authenticated(AppUser user),
+    @required TResult authenticated(AuthUser user),
   }) {
     assert(initial != null);
     assert(unauthenticated != null);
@@ -631,7 +631,7 @@ class _$_Unauthenticated implements _Unauthenticated {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult unauthenticated(),
-    TResult authenticated(AppUser user),
+    TResult authenticated(AuthUser user),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -679,9 +679,9 @@ abstract class _$AuthenticatedCopyWith<$Res> {
   factory _$AuthenticatedCopyWith(
           _Authenticated value, $Res Function(_Authenticated) then) =
       __$AuthenticatedCopyWithImpl<$Res>;
-  $Res call({AppUser user});
+  $Res call({AuthUser user});
 
-  $AppUserCopyWith<$Res> get user;
+  $AuthUserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -699,16 +699,16 @@ class __$AuthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
     Object user = freezed,
   }) {
     return _then(_Authenticated(
-      user == freezed ? _value.user : user as AppUser,
+      user == freezed ? _value.user : user as AuthUser,
     ));
   }
 
   @override
-  $AppUserCopyWith<$Res> get user {
+  $AuthUserCopyWith<$Res> get user {
     if (_value.user == null) {
       return null;
     }
-    return $AppUserCopyWith<$Res>(_value.user, (value) {
+    return $AuthUserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
     });
   }
@@ -719,7 +719,7 @@ class _$_Authenticated implements _Authenticated {
   const _$_Authenticated(this.user) : assert(user != null);
 
   @override
-  final AppUser user;
+  final AuthUser user;
 
   @override
   String toString() {
@@ -748,7 +748,7 @@ class _$_Authenticated implements _Authenticated {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult unauthenticated(),
-    @required TResult authenticated(AppUser user),
+    @required TResult authenticated(AuthUser user),
   }) {
     assert(initial != null);
     assert(unauthenticated != null);
@@ -761,7 +761,7 @@ class _$_Authenticated implements _Authenticated {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult unauthenticated(),
-    TResult authenticated(AppUser user),
+    TResult authenticated(AuthUser user),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -801,9 +801,9 @@ class _$_Authenticated implements _Authenticated {
 }
 
 abstract class _Authenticated implements AuthState {
-  const factory _Authenticated(AppUser user) = _$_Authenticated;
+  const factory _Authenticated(AuthUser user) = _$_Authenticated;
 
-  AppUser get user;
+  AuthUser get user;
   @JsonKey(ignore: true)
   _$AuthenticatedCopyWith<_Authenticated> get copyWith;
 }

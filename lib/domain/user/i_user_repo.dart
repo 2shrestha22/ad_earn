@@ -1,7 +1,7 @@
-import 'package:ad_earn/domain/user/user.dart';
+import 'package:ad_earn/domain/user/user_data.dart';
 
 abstract class IUserRepo {
-  Future<void> createUser(AppUser user);
+  Stream<UserData> getUserData();
 
   Future<void> updateCoin(int coin);
 
