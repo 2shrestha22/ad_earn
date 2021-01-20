@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:ad_earn/domain/auth/i_auth_repo.dart';
-import 'package:ad_earn/domain/auth/auth_user.dart';
+import '../../domain/auth/i_auth_repo.dart';
+import '../../domain/auth/auth_user.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';

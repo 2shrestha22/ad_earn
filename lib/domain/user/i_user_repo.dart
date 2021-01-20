@@ -1,4 +1,4 @@
-import 'package:ad_earn/domain/user/user_data.dart';
+import 'user_data.dart';
 
 abstract class IUserRepo {
   Stream<UserData> getUserData();

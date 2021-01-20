@@ -1,13 +1,14 @@
-import 'package:ad_earn/domain/auth/i_auth_repo.dart';
-import 'package:ad_earn/domain/core/email.dart';
-import 'package:ad_earn/domain/core/password.dart';
 import 'package:bloc/bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-part 'login_state.dart';
+import '../../../domain/auth/i_auth_repo.dart';
+import '../../../domain/core/email.dart';
+import '../../../domain/core/password.dart';
+
 part 'login_cubit.freezed.dart';
+part 'login_state.dart';
 
 @injectable
 class LoginCubit extends Cubit<LoginState> {
@@ -32,6 +33,19 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   Future<void> loginWithGoogle() async {
+    emit(state.copyWith(status: FormzStatus.submissionInProgress));
+    try {
+      await _authRepo.loginWithGoogle();
+      // await _authRepo.createUser();
+      emit(state.copyWith(status: FormzStatus.submissionSuccess));
+    } on Exception {
+      emit(state.copyWith(status: FormzStatus.submissionFailure));
+    } on NoSuchMethodError {
+      emit(state.copyWith(status: FormzStatus.pure));
+    }
+  }
+
+  Future<void> loginWithFacebook() async {
     emit(state.copyWith(status: FormzStatus.submissionInProgress));
     try {
       await _authRepo.loginWithGoogle();

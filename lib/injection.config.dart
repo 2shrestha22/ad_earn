@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 // **************************************************************************
 // InjectableConfigGenerator
 // **************************************************************************
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
-import 'package:injectable/injectable.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:injectable/injectable.dart';
 
 import 'application/ad/ad_cubit.dart';
-import 'infrastructure/ad/ad_repo.dart';
 import 'application/auth/auth_bloc.dart';
-import 'infrastructure/auth/auth_repo.dart';
-import 'infrastructure/core/firebase_injectable_module.dart';
+import 'application/auth/login/login_cubit.dart';
+import 'application/user/user_bloc.dart';
 import 'domain/ad/i_ad_repo.dart';
 import 'domain/auth/i_auth_repo.dart';
 import 'domain/user/i_user_repo.dart';
-import 'application/auth/login/login_cubit.dart';
-import 'application/user/user_bloc.dart';
+import 'infrastructure/ad/ad_repo.dart';
+import 'infrastructure/auth/auth_repo.dart';
+import 'infrastructure/core/firebase_injectable_module.dart';
 import 'infrastructure/user/user_repo.dart';
 
 /// adds generated dependencies

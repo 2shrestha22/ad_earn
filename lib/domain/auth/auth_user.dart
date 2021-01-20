@@ -1,4 +1,3 @@
-import 'package:ad_earn/domain/user/user_data.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

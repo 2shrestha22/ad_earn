@@ -1,11 +1,12 @@
-import 'package:ad_earn/domain/auth/auth_failures.dart';
-import 'package:ad_earn/domain/auth/i_auth_repo.dart';
-import 'package:ad_earn/domain/auth/auth_user.dart';
-import 'package:ad_earn/domain/user/user_data.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../domain/auth/auth_failures.dart';
+import '../../domain/auth/auth_user.dart';
+import '../../domain/auth/i_auth_repo.dart';
+import '../../domain/user/user_data.dart';
 
 @LazySingleton(as: IAuthRepo)
 // @Injectable(as: IAuthRepo)
@@ -45,7 +46,7 @@ class AuthRepo implements IAuthRepo {
           await _firebaseAuth.signInWithCredential(credential);
 
       //save user details in firebase of new users
-      if (userCredential.additionalUserInfo.isNewUser) createUser();
+      if (userCredential.additionalUserInfo.isNewUser) await createUser();
     } on Exception {
       throw const AuthFailure.signInFailure();
     }

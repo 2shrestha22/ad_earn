@@ -1,8 +1,9 @@
-import 'package:ad_earn/domain/user/i_user_repo.dart';
-import 'package:ad_earn/domain/user/user_data.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../domain/user/i_user_repo.dart';
+import '../../domain/user/user_data.dart';
 
 @LazySingleton(as: IUserRepo)
 class UserRepo implements IUserRepo {

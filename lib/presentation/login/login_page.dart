@@ -1,6 +1,6 @@
-import 'package:ad_earn/application/auth/login/login_cubit.dart';
-import 'package:ad_earn/injection.dart';
-import 'package:ad_earn/presentation/login/login_form/login_form.dart';
+import '../../application/auth/login/login_cubit.dart';
+import '../../injection.dart';
+import 'login_form/login_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

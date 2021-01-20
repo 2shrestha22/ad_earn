@@ -1,15 +1,15 @@
 import 'dart:async';
 
-import 'package:ad_earn/application/auth/auth_bloc.dart';
-import 'package:ad_earn/domain/user/i_user_repo.dart';
-import 'package:ad_earn/domain/user/user_data.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../domain/user/i_user_repo.dart';
+import '../../domain/user/user_data.dart';
+
+part 'user_bloc.freezed.dart';
 part 'user_event.dart';
 part 'user_state.dart';
-part 'user_bloc.freezed.dart';
 
 @injectable
 class UserBloc extends Bloc<UserEvent, UserState> {

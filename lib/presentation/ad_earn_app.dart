@@ -1,12 +1,12 @@
-import 'package:ad_earn/application/ad/ad_cubit.dart';
-import 'package:ad_earn/application/auth/auth_bloc.dart';
-import 'package:ad_earn/application/user/user_bloc.dart';
-import 'package:ad_earn/injection.dart';
-import 'package:ad_earn/presentation/dashboard/dashboard.dart';
-import 'package:ad_earn/presentation/login/login_page.dart';
-import 'package:ad_earn/presentation/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../application/ad/ad_cubit.dart';
+import '../application/auth/auth_bloc.dart';
+import '../injection.dart';
+import 'dashboard/dashboard.dart';
+import 'login/login_page.dart';
+import 'splash_screen/splash_screen.dart';
 
 class AdEarnApp extends StatelessWidget {
   @override

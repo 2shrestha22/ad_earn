@@ -1,18 +1,18 @@
-import 'package:ad_earn/application/ad/ad_cubit.dart';
-import 'package:ad_earn/application/auth/auth_bloc.dart';
-import 'package:ad_earn/application/user/user_bloc.dart';
-import 'package:ad_earn/presentation/dashboard/widgets/actions.dart';
-import 'package:ad_earn/presentation/dashboard/widgets/user_details.dart';
-import 'package:ad_earn/presentation/dashboard/widgets/watch_ad_button.dart';
-import 'package:ad_earn/presentation/faq/faq_page.dart';
-import 'package:ad_earn/presentation/redeem/redeem_page.dart';
-import 'package:ad_earn/presentation/reward_points/reward_points_page.dart';
-import 'package:ad_earn/presentation/transactions/transactions_page.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../application/ad/ad_cubit.dart';
+import '../../application/auth/auth_bloc.dart';
+import '../../application/user/user_bloc.dart';
 import '../../injection.dart';
+import '../about/about_page.dart';
+import '../redeem/redeem_page.dart';
+import '../reward_points/reward_points_page.dart';
+import '../transactions/transactions_page.dart';
+import 'widgets/actions.dart';
+import 'widgets/user_details.dart';
+import 'widgets/watch_ad_button.dart';
 
 class DashBoardPage extends StatelessWidget {
   @override
@@ -111,7 +111,7 @@ class DashBoardPage extends StatelessWidget {
                                     adLoadFailure: (_) =>
                                         FlushbarHelper.createError(
                                             message:
-                                                'You have viewed to many ads, see FAQ')
+                                                'You have viewed to many ads, try again later.')
                                           ..show(context),
                                   );
                                 },
@@ -152,19 +152,6 @@ class DashBoardPage extends StatelessWidget {
                           ),
                           children: [
                             TableRow(children: [
-                              InkWell(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (_) => FAQPage(),
-                                    ),
-                                  );
-                                },
-                                child: DashboardActions(
-                                    iconPath: 'assets/images/ic_faq.png',
-                                    desc: 'Frequently Asked Questions'),
-                              ),
                               // why builder? because our blocprovider is below Build method that
                               //provides us context, so we don't have context that have userBloc,
                               //thats why we need builder widget to get buildContext with UserBloc
@@ -186,8 +173,6 @@ class DashBoardPage extends StatelessWidget {
                                       desc: 'Redeem'),
                                 ),
                               ),
-                            ]),
-                            TableRow(children: [
                               InkWell(
                                 onTap: () {
                                   Navigator.push(
@@ -201,6 +186,8 @@ class DashBoardPage extends StatelessWidget {
                                     iconPath: 'assets/images/ic_transact.png',
                                     desc: 'Transactions'),
                               ),
+                            ]),
+                            TableRow(children: [
                               InkWell(
                                 onTap: () {
                                   Navigator.push(
@@ -213,6 +200,19 @@ class DashBoardPage extends StatelessWidget {
                                 child: DashboardActions(
                                     iconPath: 'assets/images/ic_reward.png',
                                     desc: 'Reward Points'),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) => AboutPage(),
+                                    ),
+                                  );
+                                },
+                                child: DashboardActions(
+                                    iconPath: 'assets/images/ic_about.png',
+                                    desc: 'About'),
                               ),
                             ])
                           ],

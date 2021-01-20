@@ -1,4 +1,4 @@
-import 'package:ad_earn/domain/auth/auth_user.dart';
+import 'auth_user.dart';
 
 abstract class IAuthRepo {
   Future<void> loginWithGoogle();
