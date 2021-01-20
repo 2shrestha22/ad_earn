@@ -35,11 +35,6 @@ class UserDetailsView extends StatelessWidget {
                       ),
                     ),
                   ),
-
-                  // Text(
-                  //   'Hello',
-                  //   style: TextStyle(fontSize: 18, color: Colors.black),
-                  // ),
                   Text(
                     s.userData.displayName,
                     style: TextStyle(

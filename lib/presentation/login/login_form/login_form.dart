@@ -20,7 +20,7 @@ class LoginForm extends StatelessWidget {
                 child: Column(
                   children: [
                     Image.asset(
-                      'assets/images/logo.jpg',
+                      'assets/images/logo.png',
                       width: 200,
                     ),
                     SizedBox(height: 20),
