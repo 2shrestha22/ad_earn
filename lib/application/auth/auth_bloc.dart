@@ -10,7 +10,7 @@ part 'auth_event.dart';
 part 'auth_state.dart';
 part 'auth_bloc.freezed.dart';
 
-@lazySingleton
+@injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final IAuthRepo _authRepo;
   StreamSubscription<AuthUser> _userSubscription;
@@ -30,8 +30,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     yield* event.map(
         started: (e) async* {},
         authenticationUserChanged: (event) async* {
-          //TODO it is not working
-          // yield _mapAuthenticationUserChangedToState(event);
           yield event.user != AuthUser.empty()
               ? AuthState.authenticated(event.user)
               : const AuthState.unauthenticated();
@@ -52,7 +50,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   @override
   Future<void> close() {
     _userSubscription?.cancel();
-
     return super.close();
   }
 }

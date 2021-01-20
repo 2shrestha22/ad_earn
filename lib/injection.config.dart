@@ -48,7 +48,7 @@ GetIt $initGetIt(
   gh.factory<LoginCubit>(() => LoginCubit(get<IAuthRepo>()));
   gh.factory<UserBloc>(() => UserBloc(get<IUserRepo>()));
   gh.factory<AdCubit>(() => AdCubit(get<IAdRepo>()));
-  gh.lazySingleton<AuthBloc>(() => AuthBloc(get<IAuthRepo>()));
+  gh.factory<AuthBloc>(() => AuthBloc(get<IAuthRepo>()));
   return get;
 }
 

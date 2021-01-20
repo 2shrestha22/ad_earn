@@ -17,10 +17,6 @@ class AdEarnApp extends StatelessWidget {
           create: (context) => getIt.get<AuthBloc>(),
         ),
         BlocProvider(
-          create: (context) =>
-              getIt.get<UserBloc>()..add(const UserEvent.started()),
-        ),
-        BlocProvider(
           create: (context) => getIt.get<AdCubit>(),
         ),
       ],
