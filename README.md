@@ -1,10 +1,11 @@
 # ad_earn
 
-A new Flutter project.
+AdEarn is a simple app that shows ads and gives user some coins. These coins can be later redeemed to cash.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This porject is made with Flutter.
+You need to setup FireBase Auth and FireStore as well as Facebook login app from Facebook developer dashboard.
 
 A few resources to get you started if this is your first Flutter project:
 
