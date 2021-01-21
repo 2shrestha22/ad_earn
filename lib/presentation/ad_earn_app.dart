@@ -22,7 +22,7 @@ class AdEarnApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'AdEarn',
         theme: ThemeData(
           primarySwatch: Colors.amber,
           visualDensity: VisualDensity.adaptivePlatformDensity,
