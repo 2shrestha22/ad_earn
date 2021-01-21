@@ -48,10 +48,11 @@ class LoginCubit extends Cubit<LoginState> {
   Future<void> loginWithFacebook() async {
     emit(state.copyWith(status: FormzStatus.submissionInProgress));
     try {
-      await _authRepo.loginWithGoogle();
+      await _authRepo.loginWithFacebook();
       // await _authRepo.createUser();
       emit(state.copyWith(status: FormzStatus.submissionSuccess));
     } on Exception {
+      // throw Exception(e);
       emit(state.copyWith(status: FormzStatus.submissionFailure));
     } on NoSuchMethodError {
       emit(state.copyWith(status: FormzStatus.pure));

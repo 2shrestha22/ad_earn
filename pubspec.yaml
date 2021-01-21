@@ -33,6 +33,7 @@ dependencies:
   firebase_storage: ^7.0.0
   flushbar: ^1.10.4
   flutter_bloc: ^6.1.1
+  flutter_facebook_auth: ^2.0.0+1
   flutter_signin_button: ^1.1.0
   formz: ^0.3.2
   freezed_annotation: ^0.12.0

@@ -1,3 +1,5 @@
+import 'package:flushbar/flushbar_helper.dart';
+
 import '../../../application/auth/login/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -36,7 +38,15 @@ class LoginForm extends StatelessWidget {
             //   obscureText: true,
             // ),
             // SizedBox(height: 20),
-            BlocBuilder<LoginCubit, LoginState>(
+            BlocConsumer<LoginCubit, LoginState>(
+              listener: (context, state) {
+                if (state.status.isSubmissionFailure) {
+                  FlushbarHelper.createError(
+                      message:
+                          'Failed to login, have you logged in with different method before?')
+                    ..show(context);
+                }
+              },
               builder: (context, state) {
                 if (state.status.isSubmissionInProgress)
                   return CircularProgressIndicator();
@@ -50,12 +60,12 @@ class LoginForm extends StatelessWidget {
                             context.read<LoginCubit>().loginWithGoogle();
                           },
                         ),
-                        // SignInButton(
-                        //   Buttons.FacebookNew,
-                        //   onPressed: () {
-                        //     context.read<LoginCubit>().loginWithFacebook();
-                        //   },
-                        // ),
+                        SignInButton(
+                          Buttons.FacebookNew,
+                          onPressed: () {
+                            context.read<LoginCubit>().loginWithFacebook();
+                          },
+                        ),
                       ],
                     ),
                   );

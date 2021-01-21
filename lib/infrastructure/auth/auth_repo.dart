@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 
@@ -13,9 +15,11 @@ import '../../domain/user/user_data.dart';
 class AuthRepo implements IAuthRepo {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
+  final FacebookAuth _facebookAuth;
   final FirebaseFirestore _firebaseFirestore;
 
-  AuthRepo(this._firebaseAuth, this._googleSignIn, this._firebaseFirestore);
+  AuthRepo(this._firebaseAuth, this._googleSignIn, this._firebaseFirestore,
+      this._facebookAuth);
 
   @override
   Future<void> logOut() async {
@@ -28,9 +32,22 @@ class AuthRepo implements IAuthRepo {
   }
 
   @override
-  Future<void> loginWithFacebook() {
-    // TODO: implement loginWithFacebook
-    throw UnimplementedError();
+  Future<void> loginWithFacebook() async {
+    try {
+      //triger signinflow
+      final accessToken = await _facebookAuth.login();
+      //create credential from accesstoken
+      final facebookAuthCredential =
+          FacebookAuthProvider.credential(accessToken.token);
+
+      final userCredential =
+          await _firebaseAuth.signInWithCredential(facebookAuthCredential);
+
+      //save user details in firebase of new users
+      if (userCredential.additionalUserInfo.isNewUser) await createUser();
+    } on FacebookAuthException catch (e) {
+      throw const AuthFailure.signInFailure();
+    }
   }
 
   @override
