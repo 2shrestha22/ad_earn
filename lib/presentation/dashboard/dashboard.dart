@@ -43,23 +43,27 @@ class DashBoardPage extends StatelessWidget {
                 }),
           ],
         ),
-        body: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
+        body: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               SizedBox(
-                height: 0.0,
+                height: 30.0,
               ),
               Image.asset(
                 'assets/images/logo.png',
                 fit: BoxFit.contain,
                 height: 200.0,
               ),
+              SizedBox(
+                height: 30.0,
+              ),
               UserDetailsView(),
+              SizedBox(
+                height: 30.0,
+              ),
               Container(
                 height: 350.0,
                 width: MediaQuery.of(context).size.width,

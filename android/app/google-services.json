@@ -1,20 +1,20 @@
 {
   "project_info": {
-    "project_number": "766070009038",
-    "project_id": "adearn-218b0",
-    "storage_bucket": "adearn-218b0.appspot.com"
+    "project_number": "744277028572",
+    "project_id": "adearn-b6896",
+    "storage_bucket": "adearn-b6896.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:766070009038:android:1f24bd04e2f5ac5453f49f",
+        "mobilesdk_app_id": "1:744277028572:android:3d9b5539ac232e6533ce19",
         "android_client_info": {
           "package_name": "com.example.ad_earn"
         }
       },
       "oauth_client": [
         {
-          "client_id": "766070009038-k5b7ssi454g1pslhqa26lt2csbnvmnkr.apps.googleusercontent.com",
+          "client_id": "744277028572-c5vcoqpu9i4415jtluik8simsiq9u07t.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.ad_earn",
@@ -22,20 +22,20 @@
           }
         },
         {
-          "client_id": "766070009038-fh43v2dcmf6ebc5k8r1dhrdjajopb5q3.apps.googleusercontent.com",
+          "client_id": "744277028572-doed6ukul6p9v6qhf7ntlstlad39354m.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCSkoWC3DJ1VAALG4aMKSq7wZT-HRBB5sU"
+          "current_key": "AIzaSyBNKJuysckjhHd-UT6mTBioEgMJkZx9K3k"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "766070009038-fh43v2dcmf6ebc5k8r1dhrdjajopb5q3.apps.googleusercontent.com",
+              "client_id": "744277028572-doed6ukul6p9v6qhf7ntlstlad39354m.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
