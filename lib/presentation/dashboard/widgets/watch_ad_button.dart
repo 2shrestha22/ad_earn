@@ -1,6 +1,6 @@
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
-import 'package:ad_earn/app_config.dart' as CONFIG;
+import '../../../app_config.dart' as CONFIG;
 
 class WatchAdButton extends StatelessWidget {
   final void Function() onTap;
@@ -22,31 +22,31 @@ class WatchAdButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(18.0),
           side: BorderSide(color: Colors.white, width: 2),
         ),
-        // onPressed: onTap,
-        onPressed: () async {
-          RewardedVideoAd.instance.listener = (RewardedVideoAdEvent event,
-              {String rewardType, int rewardAmount}) async {
-            if (event == RewardedVideoAdEvent.rewarded) {
-              // _adRepo.updateCoin(rewardAmount);
-            }
-            if (event == RewardedVideoAdEvent.loaded) {
-              await RewardedVideoAd.instance.show();
-              // emit(_Initial());
-            }
-            if (event == RewardedVideoAdEvent.failedToLoad) {
-              // emit(_AdLoadFailure());
-              // emit(_Initial());
-            }
-          };
+        onPressed: onTap,
+        // onPressed: () async {
+        //   RewardedVideoAd.instance.listener = (RewardedVideoAdEvent event,
+        //       {String rewardType, int rewardAmount}) async {
+        //     if (event == RewardedVideoAdEvent.rewarded) {
+        //       // _adRepo.updateCoin(rewardAmount);
+        //     }
+        //     if (event == RewardedVideoAdEvent.loaded) {
+        //       await RewardedVideoAd.instance.show();
+        //       // emit(_Initial());
+        //     }
+        //     if (event == RewardedVideoAdEvent.failedToLoad) {
+        //       // emit(_AdLoadFailure());
+        //       // emit(_Initial());
+        //     }
+        //   };
 
-          try {
-            await RewardedVideoAd.instance
-                .load(adUnitId: CONFIG.rewardedAdUnitId);
-          } catch (e) {
-            // emit(_Initial());
-            throw Exception(e);
-          }
-        },
+        //   try {
+        //     await RewardedVideoAd.instance
+        //         .load(adUnitId: CONFIG.rewardedAdUnitId);
+        //   } catch (e) {
+        //     // emit(_Initial());
+        //     throw Exception(e);
+        //   }
+        // },
         child: Text(
           text,
           style: TextStyle(

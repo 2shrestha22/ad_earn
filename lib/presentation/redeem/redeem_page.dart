@@ -27,7 +27,7 @@ class RedeemPage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 150.0,
+              // height: 150.0,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: Color.fromRGBO(252, 233, 187, 1),

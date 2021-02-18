@@ -7,17 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:744277028572:android:3d9b5539ac232e6533ce19",
+        "mobilesdk_app_id": "1:744277028572:android:2bef1da98917a24b33ce19",
         "android_client_info": {
-          "package_name": "com.example.ad_earn"
+          "package_name": "com.bijay.adapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "744277028572-c5vcoqpu9i4415jtluik8simsiq9u07t.apps.googleusercontent.com",
+          "client_id": "744277028572-7v7rt249783fpv8arid2s5scddd8truh.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.ad_earn",
+            "package_name": "com.bijay.adapp",
             "certificate_hash": "0096c9397f16ac5648b134fdaba3f75bb2e91076"
           }
         },

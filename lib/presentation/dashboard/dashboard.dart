@@ -1,3 +1,4 @@
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +15,56 @@ import 'widgets/actions.dart';
 import 'widgets/user_details.dart';
 import 'widgets/watch_ad_button.dart';
 
-class DashBoardPage extends StatelessWidget {
+class DashBoardPage extends StatefulWidget {
+  @override
+  _DashBoardPageState createState() => _DashBoardPageState();
+}
+
+class _DashBoardPageState extends State<DashBoardPage> {
+  BannerAd myBanner;
+
+  @override
+  void dispose() {
+    myBanner..dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    // initAd();
+  }
+
+  void initAd() {
+    myBanner = BannerAd(
+      // Replace the testAdUnitId with an ad unit id from the AdMob dash.
+      // https://developers.google.com/admob/android/test-ads
+      // https://developers.google.com/admob/ios/test-ads
+      // adUnitId: 'ca-app-pub-4754550033559463/5697843769', //depe
+      adUnitId: 'ca-app-pub-2415603924032760/3846362586', //me
+      size: AdSize.banner,
+      // targetingInfo: targetingInfo,
+      listener: (MobileAdEvent event) {
+        print("BannerAd event is $event");
+
+        if (event == MobileAdEvent.loaded) {
+          myBanner.show(
+            // Positions the banner ad 60 pixels from the bottom of the screen
+            anchorOffset: 60.0,
+            // Positions the banner ad 10 pixels from the center of the screen to the right
+            horizontalCenterOffset: 10.0,
+            // Banner Position
+            anchorType: AnchorType.bottom,
+          );
+        }
+      },
+    );
+
+    myBanner
+      // typically this happens well before the ad is shown
+      ..load();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -236,6 +286,4 @@ class DashBoardPage extends StatelessWidget {
       ),
     );
   }
-
-// custom action widget
 }

@@ -32,12 +32,13 @@ class UserDetailsView extends StatelessWidget {
                       shape: BoxShape.circle,
                       image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: CachedNetworkImageProvider(s.userData.photoUrl),
+                        image: CachedNetworkImageProvider(
+                            'https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'),
                       ),
                     ),
                   ),
                   Text(
-                    s.userData.displayName,
+                    'Emma Watson',
                     style: TextStyle(
                         fontSize: 24,
                         color: Colors.black,
@@ -49,7 +50,7 @@ class UserDetailsView extends StatelessWidget {
                   RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
-                      text: s.userData.coin.toString(),
+                      text: '2378',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 30,

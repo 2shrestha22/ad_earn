@@ -64,7 +64,8 @@ class AuthRepo implements IAuthRepo {
 
       //save user details in firebase of new users
       if (userCredential.additionalUserInfo.isNewUser) await createUser();
-    } on Exception {
+    } on Exception catch (e) {
+      print(e);
       throw const AuthFailure.signInFailure();
     }
   }
