@@ -1,4 +1,4 @@
 library app_config;
 
-const String adMobAppId = 'ca-app-pub-5153400797408077~6452671599';
-const String rewardedAdUnitId = 'ca-app-pub-5153400797408077/3522561391';
+const String adMobAppId = 'ca-app-pub-2524142559921106~3095468799';
+const String rewardedAdUnitId = 'ca-app-pub-2524142559921106/7145845708';
