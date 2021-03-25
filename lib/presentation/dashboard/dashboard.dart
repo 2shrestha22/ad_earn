@@ -3,6 +3,7 @@ import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../app_config.dart';
 import '../../application/ad/ad_cubit.dart';
 import '../../application/auth/auth_bloc.dart';
 import '../../application/user/user_bloc.dart';
@@ -40,8 +41,8 @@ class _DashBoardPageState extends State<DashBoardPage> {
       // Replace the testAdUnitId with an ad unit id from the AdMob dash.
       // https://developers.google.com/admob/android/test-ads
       // https://developers.google.com/admob/ios/test-ads
-      // adUnitId: 'ca-app-pub-4754550033559463/5697843769', //depe
-      adUnitId: 'ca-app-pub-2415603924032760/3846362586', //me
+
+      adUnitId: rewardedAdUnitId,
       size: AdSize.banner,
       // targetingInfo: targetingInfo,
       listener: (MobileAdEvent event) {
