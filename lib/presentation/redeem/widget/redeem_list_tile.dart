@@ -4,13 +4,13 @@ import 'reddem_button.dart';
 
 class RedeemListTile extends StatelessWidget {
   final String assetPath;
-  final String title;
+  final String? title;
   final void Function() onTap;
   const RedeemListTile({
-    Key key,
-    @required this.assetPath,
+    Key? key,
+    required this.assetPath,
     this.title,
-    @required this.onTap,
+    required this.onTap,
   }) : super(key: key);
 
   @override

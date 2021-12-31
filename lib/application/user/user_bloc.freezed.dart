@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'user_bloc.dart';
 
@@ -9,40 +10,67 @@ part of 'user_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$UserEventTearOff {
   const _$UserEventTearOff();
 
-// ignore: unused_element
   _Started started() {
     return const _Started();
+  }
+
+  _UserDataChanged userDataChanged(UserData userData) {
+    return _UserDataChanged(
+      userData,
+    );
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $UserEvent = _$UserEventTearOff();
 
 /// @nodoc
 mixin _$UserEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult started(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(UserData userData) userDataChanged,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult started(),
-    @required TResult orElse(),
-  });
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(UserData userData)? userDataChanged,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult started(_Started value),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(UserData userData)? userDataChanged,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult started(_Started value),
-    @required TResult orElse(),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_UserDataChanged value) userDataChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_UserDataChanged value)? userDataChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_UserDataChanged value)? userDataChanged,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -77,6 +105,7 @@ class __$StartedCopyWithImpl<$Res> extends _$UserEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Started implements _Started {
   const _$_Started();
 
@@ -87,7 +116,8 @@ class _$_Started implements _Started {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Started);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Started);
   }
 
   @override
@@ -95,20 +125,29 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult started(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(UserData userData) userDataChanged,
   }) {
-    assert(started != null);
     return started();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult started(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(UserData userData)? userDataChanged,
   }) {
-    assert(orElse != null);
+    return started?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(UserData userData)? userDataChanged,
+    required TResult orElse(),
+  }) {
     if (started != null) {
       return started();
     }
@@ -117,20 +156,29 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult started(_Started value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_UserDataChanged value) userDataChanged,
   }) {
-    assert(started != null);
     return started(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult started(_Started value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_UserDataChanged value)? userDataChanged,
   }) {
-    assert(orElse != null);
+    return started?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_UserDataChanged value)? userDataChanged,
+    required TResult orElse(),
+  }) {
     if (started != null) {
       return started(this);
     }
@@ -143,15 +191,155 @@ abstract class _Started implements UserEvent {
 }
 
 /// @nodoc
+abstract class _$UserDataChangedCopyWith<$Res> {
+  factory _$UserDataChangedCopyWith(
+          _UserDataChanged value, $Res Function(_UserDataChanged) then) =
+      __$UserDataChangedCopyWithImpl<$Res>;
+  $Res call({UserData userData});
+
+  $UserDataCopyWith<$Res> get userData;
+}
+
+/// @nodoc
+class __$UserDataChangedCopyWithImpl<$Res> extends _$UserEventCopyWithImpl<$Res>
+    implements _$UserDataChangedCopyWith<$Res> {
+  __$UserDataChangedCopyWithImpl(
+      _UserDataChanged _value, $Res Function(_UserDataChanged) _then)
+      : super(_value, (v) => _then(v as _UserDataChanged));
+
+  @override
+  _UserDataChanged get _value => super._value as _UserDataChanged;
+
+  @override
+  $Res call({
+    Object? userData = freezed,
+  }) {
+    return _then(_UserDataChanged(
+      userData == freezed
+          ? _value.userData
+          : userData // ignore: cast_nullable_to_non_nullable
+              as UserData,
+    ));
+  }
+
+  @override
+  $UserDataCopyWith<$Res> get userData {
+    return $UserDataCopyWith<$Res>(_value.userData, (value) {
+      return _then(_value.copyWith(userData: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_UserDataChanged implements _UserDataChanged {
+  const _$_UserDataChanged(this.userData);
+
+  @override
+  final UserData userData;
+
+  @override
+  String toString() {
+    return 'UserEvent.userDataChanged(userData: $userData)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _UserDataChanged &&
+            const DeepCollectionEquality().equals(other.userData, userData));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(userData));
+
+  @JsonKey(ignore: true)
+  @override
+  _$UserDataChangedCopyWith<_UserDataChanged> get copyWith =>
+      __$UserDataChangedCopyWithImpl<_UserDataChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(UserData userData) userDataChanged,
+  }) {
+    return userDataChanged(userData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(UserData userData)? userDataChanged,
+  }) {
+    return userDataChanged?.call(userData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(UserData userData)? userDataChanged,
+    required TResult orElse(),
+  }) {
+    if (userDataChanged != null) {
+      return userDataChanged(userData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_UserDataChanged value) userDataChanged,
+  }) {
+    return userDataChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_UserDataChanged value)? userDataChanged,
+  }) {
+    return userDataChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_UserDataChanged value)? userDataChanged,
+    required TResult orElse(),
+  }) {
+    if (userDataChanged != null) {
+      return userDataChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UserDataChanged implements UserEvent {
+  const factory _UserDataChanged(UserData userData) = _$_UserDataChanged;
+
+  UserData get userData;
+  @JsonKey(ignore: true)
+  _$UserDataChangedCopyWith<_UserDataChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$UserStateTearOff {
   const _$UserStateTearOff();
 
-// ignore: unused_element
   _LoadInProgress loadInProgress() {
     return const _LoadInProgress();
   }
 
-// ignore: unused_element
   _LoadInSuccess loadInSuccess(UserData userData) {
     return _LoadInSuccess(
       userData,
@@ -160,33 +348,48 @@ class _$UserStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $UserState = _$UserStateTearOff();
 
 /// @nodoc
 mixin _$UserState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loadInProgress(),
-    @required TResult loadInSuccess(UserData userData),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadInProgress,
+    required TResult Function(UserData userData) loadInSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loadInProgress(),
-    TResult loadInSuccess(UserData userData),
-    @required TResult orElse(),
-  });
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loadInProgress,
+    TResult Function(UserData userData)? loadInSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadInSuccess(_LoadInSuccess value),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadInProgress,
+    TResult Function(UserData userData)? loadInSuccess,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadInSuccess(_LoadInSuccess value),
-    @required TResult orElse(),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadInSuccess value) loadInSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadInSuccess value)? loadInSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadInSuccess value)? loadInSuccess,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -223,6 +426,7 @@ class __$LoadInProgressCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -233,7 +437,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -241,23 +446,29 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loadInProgress(),
-    @required TResult loadInSuccess(UserData userData),
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadInProgress,
+    required TResult Function(UserData userData) loadInSuccess,
   }) {
-    assert(loadInProgress != null);
-    assert(loadInSuccess != null);
     return loadInProgress();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loadInProgress(),
-    TResult loadInSuccess(UserData userData),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loadInProgress,
+    TResult Function(UserData userData)? loadInSuccess,
   }) {
-    assert(orElse != null);
+    return loadInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadInProgress,
+    TResult Function(UserData userData)? loadInSuccess,
+    required TResult orElse(),
+  }) {
     if (loadInProgress != null) {
       return loadInProgress();
     }
@@ -266,23 +477,29 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadInSuccess(_LoadInSuccess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadInSuccess value) loadInSuccess,
   }) {
-    assert(loadInProgress != null);
-    assert(loadInSuccess != null);
     return loadInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadInSuccess(_LoadInSuccess value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadInSuccess value)? loadInSuccess,
   }) {
-    assert(orElse != null);
+    return loadInProgress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadInSuccess value)? loadInSuccess,
+    required TResult orElse(),
+  }) {
     if (loadInProgress != null) {
       return loadInProgress(this);
     }
@@ -316,18 +533,18 @@ class __$LoadInSuccessCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userData = freezed,
+    Object? userData = freezed,
   }) {
     return _then(_LoadInSuccess(
-      userData == freezed ? _value.userData : userData as UserData,
+      userData == freezed
+          ? _value.userData
+          : userData // ignore: cast_nullable_to_non_nullable
+              as UserData,
     ));
   }
 
   @override
   $UserDataCopyWith<$Res> get userData {
-    if (_value.userData == null) {
-      return null;
-    }
     return $UserDataCopyWith<$Res>(_value.userData, (value) {
       return _then(_value.copyWith(userData: value));
     });
@@ -335,8 +552,9 @@ class __$LoadInSuccessCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadInSuccess implements _LoadInSuccess {
-  const _$_LoadInSuccess(this.userData) : assert(userData != null);
+  const _$_LoadInSuccess(this.userData);
 
   @override
   final UserData userData;
@@ -349,15 +567,14 @@ class _$_LoadInSuccess implements _LoadInSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadInSuccess &&
-            (identical(other.userData, userData) ||
-                const DeepCollectionEquality()
-                    .equals(other.userData, userData)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadInSuccess &&
+            const DeepCollectionEquality().equals(other.userData, userData));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userData);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(userData));
 
   @JsonKey(ignore: true)
   @override
@@ -366,23 +583,29 @@ class _$_LoadInSuccess implements _LoadInSuccess {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loadInProgress(),
-    @required TResult loadInSuccess(UserData userData),
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadInProgress,
+    required TResult Function(UserData userData) loadInSuccess,
   }) {
-    assert(loadInProgress != null);
-    assert(loadInSuccess != null);
     return loadInSuccess(userData);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loadInProgress(),
-    TResult loadInSuccess(UserData userData),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loadInProgress,
+    TResult Function(UserData userData)? loadInSuccess,
   }) {
-    assert(orElse != null);
+    return loadInSuccess?.call(userData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadInProgress,
+    TResult Function(UserData userData)? loadInSuccess,
+    required TResult orElse(),
+  }) {
     if (loadInSuccess != null) {
       return loadInSuccess(userData);
     }
@@ -391,23 +614,29 @@ class _$_LoadInSuccess implements _LoadInSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadInSuccess(_LoadInSuccess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadInSuccess value) loadInSuccess,
   }) {
-    assert(loadInProgress != null);
-    assert(loadInSuccess != null);
     return loadInSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadInSuccess(_LoadInSuccess value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadInSuccess value)? loadInSuccess,
   }) {
-    assert(orElse != null);
+    return loadInSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadInSuccess value)? loadInSuccess,
+    required TResult orElse(),
+  }) {
     if (loadInSuccess != null) {
       return loadInSuccess(this);
     }
@@ -420,5 +649,6 @@ abstract class _LoadInSuccess implements UserState {
 
   UserData get userData;
   @JsonKey(ignore: true)
-  _$LoadInSuccessCopyWith<_LoadInSuccess> get copyWith;
+  _$LoadInSuccessCopyWith<_LoadInSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }

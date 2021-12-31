@@ -6,7 +6,7 @@ import '../../../application/user/user_bloc.dart';
 
 class UserDetailsView extends StatelessWidget {
   const UserDetailsView({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

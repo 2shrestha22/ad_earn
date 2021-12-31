@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class RedeemButton extends StatelessWidget {
   final void Function() onTap;
 
-  const RedeemButton({Key key, @required this.onTap}) : super(key: key);
+  const RedeemButton({Key? key, required this.onTap}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,7 +13,7 @@ class RedeemButton extends StatelessWidget {
         height: 50,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18.0),
-          side: BorderSide(color: Colors.yellow[600], width: 2),
+          side: BorderSide(color: Colors.yellow[600]!, width: 2),
         ),
         onPressed: onTap,
         child: Text(

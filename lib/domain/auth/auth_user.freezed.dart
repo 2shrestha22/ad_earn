@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth_user.dart';
 
@@ -9,16 +10,18 @@ part of 'auth_user.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$AuthUserTearOff {
   const _$AuthUserTearOff();
 
-// ignore: unused_element
   _AppUser call(
-      {@required String userId,
-      @required String email,
-      @required String name,
-      @required String photoUrl}) {
+      {required String userId,
+      required String email,
+      required String name,
+      required String photoUrl}) {
     return _AppUser(
       userId: userId,
       email: email,
@@ -29,18 +32,18 @@ class _$AuthUserTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $AuthUser = _$AuthUserTearOff();
 
 /// @nodoc
 mixin _$AuthUser {
-  String get userId;
-  String get email;
-  String get name;
-  String get photoUrl;
+  String get userId => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get photoUrl => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AuthUserCopyWith<AuthUser> get copyWith;
+  $AuthUserCopyWith<AuthUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -60,16 +63,28 @@ class _$AuthUserCopyWithImpl<$Res> implements $AuthUserCopyWith<$Res> {
 
   @override
   $Res call({
-    Object userId = freezed,
-    Object email = freezed,
-    Object name = freezed,
-    Object photoUrl = freezed,
+    Object? userId = freezed,
+    Object? email = freezed,
+    Object? name = freezed,
+    Object? photoUrl = freezed,
   }) {
     return _then(_value.copyWith(
-      userId: userId == freezed ? _value.userId : userId as String,
-      email: email == freezed ? _value.email : email as String,
-      name: name == freezed ? _value.name : name as String,
-      photoUrl: photoUrl == freezed ? _value.photoUrl : photoUrl as String,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      photoUrl: photoUrl == freezed
+          ? _value.photoUrl
+          : photoUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -93,32 +108,41 @@ class __$AppUserCopyWithImpl<$Res> extends _$AuthUserCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userId = freezed,
-    Object email = freezed,
-    Object name = freezed,
-    Object photoUrl = freezed,
+    Object? userId = freezed,
+    Object? email = freezed,
+    Object? name = freezed,
+    Object? photoUrl = freezed,
   }) {
     return _then(_AppUser(
-      userId: userId == freezed ? _value.userId : userId as String,
-      email: email == freezed ? _value.email : email as String,
-      name: name == freezed ? _value.name : name as String,
-      photoUrl: photoUrl == freezed ? _value.photoUrl : photoUrl as String,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      photoUrl: photoUrl == freezed
+          ? _value.photoUrl
+          : photoUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_AppUser extends _AppUser with DiagnosticableTreeMixin {
   const _$_AppUser(
-      {@required this.userId,
-      @required this.email,
-      @required this.name,
-      @required this.photoUrl})
-      : assert(userId != null),
-        assert(email != null),
-        assert(name != null),
-        assert(photoUrl != null),
-        super._();
+      {required this.userId,
+      required this.email,
+      required this.name,
+      required this.photoUrl})
+      : super._();
 
   @override
   final String userId;
@@ -148,25 +172,21 @@ class _$_AppUser extends _AppUser with DiagnosticableTreeMixin {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AppUser &&
-            (identical(other.userId, userId) ||
-                const DeepCollectionEquality().equals(other.userId, userId)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.photoUrl, photoUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.photoUrl, photoUrl)));
+        (other.runtimeType == runtimeType &&
+            other is _AppUser &&
+            const DeepCollectionEquality().equals(other.userId, userId) &&
+            const DeepCollectionEquality().equals(other.email, email) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.photoUrl, photoUrl));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(userId) ^
-      const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(photoUrl);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(userId),
+      const DeepCollectionEquality().hash(email),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(photoUrl));
 
   @JsonKey(ignore: true)
   @override
@@ -175,12 +195,12 @@ class _$_AppUser extends _AppUser with DiagnosticableTreeMixin {
 }
 
 abstract class _AppUser extends AuthUser {
-  const _AppUser._() : super._();
   const factory _AppUser(
-      {@required String userId,
-      @required String email,
-      @required String name,
-      @required String photoUrl}) = _$_AppUser;
+      {required String userId,
+      required String email,
+      required String name,
+      required String photoUrl}) = _$_AppUser;
+  const _AppUser._() : super._();
 
   @override
   String get userId;
@@ -192,5 +212,6 @@ abstract class _AppUser extends AuthUser {
   String get photoUrl;
   @override
   @JsonKey(ignore: true)
-  _$AppUserCopyWith<_AppUser> get copyWith;
+  _$AppUserCopyWith<_AppUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }

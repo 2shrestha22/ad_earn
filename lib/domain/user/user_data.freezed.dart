@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'user_data.dart';
 
@@ -8,6 +9,10 @@ part of 'user_data.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 UserData _$UserDataFromJson(Map<String, dynamic> json) {
   return _UserData.fromJson(json);
 }
@@ -16,13 +21,12 @@ UserData _$UserDataFromJson(Map<String, dynamic> json) {
 class _$UserDataTearOff {
   const _$UserDataTearOff();
 
-// ignore: unused_element
   _UserData call(
-      {@required String uid,
-      @required String email,
-      @required String displayName,
-      @required String photoUrl,
-      @required int coin}) {
+      {required String uid,
+      required String email,
+      required String displayName,
+      required String photoUrl,
+      required int coin}) {
     return _UserData(
       uid: uid,
       email: email,
@@ -32,27 +36,26 @@ class _$UserDataTearOff {
     );
   }
 
-// ignore: unused_element
-  UserData fromJson(Map<String, Object> json) {
+  UserData fromJson(Map<String, Object?> json) {
     return UserData.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $UserData = _$UserDataTearOff();
 
 /// @nodoc
 mixin _$UserData {
-  String get uid;
-  String get email;
-  String get displayName;
-  String get photoUrl;
-  int get coin;
+  String get uid => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  String get displayName => throw _privateConstructorUsedError;
+  String get photoUrl => throw _privateConstructorUsedError;
+  int get coin => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserDataCopyWith<UserData> get copyWith;
+  $UserDataCopyWith<UserData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -77,19 +80,33 @@ class _$UserDataCopyWithImpl<$Res> implements $UserDataCopyWith<$Res> {
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object email = freezed,
-    Object displayName = freezed,
-    Object photoUrl = freezed,
-    Object coin = freezed,
+    Object? uid = freezed,
+    Object? email = freezed,
+    Object? displayName = freezed,
+    Object? photoUrl = freezed,
+    Object? coin = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: uid == freezed ? _value.uid : uid as String,
-      email: email == freezed ? _value.email : email as String,
-      displayName:
-          displayName == freezed ? _value.displayName : displayName as String,
-      photoUrl: photoUrl == freezed ? _value.photoUrl : photoUrl as String,
-      coin: coin == freezed ? _value.coin : coin as int,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      displayName: displayName == freezed
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
+              as String,
+      photoUrl: photoUrl == freezed
+          ? _value.photoUrl
+          : photoUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      coin: coin == freezed
+          ? _value.coin
+          : coin // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -118,41 +135,49 @@ class __$UserDataCopyWithImpl<$Res> extends _$UserDataCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object email = freezed,
-    Object displayName = freezed,
-    Object photoUrl = freezed,
-    Object coin = freezed,
+    Object? uid = freezed,
+    Object? email = freezed,
+    Object? displayName = freezed,
+    Object? photoUrl = freezed,
+    Object? coin = freezed,
   }) {
     return _then(_UserData(
-      uid: uid == freezed ? _value.uid : uid as String,
-      email: email == freezed ? _value.email : email as String,
-      displayName:
-          displayName == freezed ? _value.displayName : displayName as String,
-      photoUrl: photoUrl == freezed ? _value.photoUrl : photoUrl as String,
-      coin: coin == freezed ? _value.coin : coin as int,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      displayName: displayName == freezed
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
+              as String,
+      photoUrl: photoUrl == freezed
+          ? _value.photoUrl
+          : photoUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      coin: coin == freezed
+          ? _value.coin
+          : coin // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_UserData implements _UserData {
   const _$_UserData(
-      {@required this.uid,
-      @required this.email,
-      @required this.displayName,
-      @required this.photoUrl,
-      @required this.coin})
-      : assert(uid != null),
-        assert(email != null),
-        assert(displayName != null),
-        assert(photoUrl != null),
-        assert(coin != null);
+      {required this.uid,
+      required this.email,
+      required this.displayName,
+      required this.photoUrl,
+      required this.coin});
 
   factory _$_UserData.fromJson(Map<String, dynamic> json) =>
-      _$_$_UserDataFromJson(json);
+      _$$_UserDataFromJson(json);
 
   @override
   final String uid;
@@ -173,29 +198,24 @@ class _$_UserData implements _UserData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UserData &&
-            (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.displayName, displayName) ||
-                const DeepCollectionEquality()
-                    .equals(other.displayName, displayName)) &&
-            (identical(other.photoUrl, photoUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.photoUrl, photoUrl)) &&
-            (identical(other.coin, coin) ||
-                const DeepCollectionEquality().equals(other.coin, coin)));
+        (other.runtimeType == runtimeType &&
+            other is _UserData &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality().equals(other.email, email) &&
+            const DeepCollectionEquality()
+                .equals(other.displayName, displayName) &&
+            const DeepCollectionEquality().equals(other.photoUrl, photoUrl) &&
+            const DeepCollectionEquality().equals(other.coin, coin));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(uid) ^
-      const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(displayName) ^
-      const DeepCollectionEquality().hash(photoUrl) ^
-      const DeepCollectionEquality().hash(coin);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(email),
+      const DeepCollectionEquality().hash(displayName),
+      const DeepCollectionEquality().hash(photoUrl),
+      const DeepCollectionEquality().hash(coin));
 
   @JsonKey(ignore: true)
   @override
@@ -204,17 +224,17 @@ class _$_UserData implements _UserData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_UserDataToJson(this);
+    return _$$_UserDataToJson(this);
   }
 }
 
 abstract class _UserData implements UserData {
   const factory _UserData(
-      {@required String uid,
-      @required String email,
-      @required String displayName,
-      @required String photoUrl,
-      @required int coin}) = _$_UserData;
+      {required String uid,
+      required String email,
+      required String displayName,
+      required String photoUrl,
+      required int coin}) = _$_UserData;
 
   factory _UserData.fromJson(Map<String, dynamic> json) = _$_UserData.fromJson;
 
@@ -230,5 +250,6 @@ abstract class _UserData implements UserData {
   int get coin;
   @override
   @JsonKey(ignore: true)
-  _$UserDataCopyWith<_UserData> get copyWith;
+  _$UserDataCopyWith<_UserData> get copyWith =>
+      throw _privateConstructorUsedError;
 }

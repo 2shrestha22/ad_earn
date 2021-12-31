@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -13,28 +11,19 @@ part 'user_state.dart';
 
 @injectable
 class UserBloc extends Bloc<UserEvent, UserState> {
-  UserBloc(this._userRepo) : super(const _LoadInProgress());
+  UserBloc(this._userRepo) : super(const _LoadInProgress()) {
+    on((_Started started, emit) async* {
+      emit(UserState.loadInProgress());
 
-  final IUserRepo _userRepo;
-  // StreamSubscription _authSubscription;
-  @override
-  Stream<UserState> mapEventToState(
-    UserEvent event,
-  ) async* {
-    yield* event.map(
-      started: (_) async* {
-        yield UserState.loadInProgress();
+      _userRepo.getUserData().listen((userData) {
+        add(_UserDataChanged(userData));
+      });
+    });
 
-        yield* _userRepo
-            .getUserData()
-            .map((userData) => UserState.loadInSuccess(userData));
-      },
-    );
+    on((_UserDataChanged userDataChanged, emit) async* {
+      emit(UserState.loadInSuccess(userDataChanged.userData));
+    });
   }
 
-  // @override
-  // Future<void> close() async {
-  //   await _authSubscription.cancel();
-  //   return super.close();
-  // }
+  final IUserRepo _userRepo;
 }

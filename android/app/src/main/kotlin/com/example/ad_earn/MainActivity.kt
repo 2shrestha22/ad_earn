@@ -1,4 +1,4 @@
-package com.bijay.adapp
+package com.example.ad_earn
 
 import io.flutter.embedding.android.FlutterActivity
 

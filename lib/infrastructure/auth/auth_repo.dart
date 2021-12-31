@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
@@ -35,17 +34,22 @@ class AuthRepo implements IAuthRepo {
   Future<void> loginWithFacebook() async {
     try {
       //triger signinflow
-      final accessToken = await _facebookAuth.login();
+      final loginResult = await _facebookAuth.login();
+
+      if (loginResult.accessToken == null) {
+        throw AuthFailure.signInFailure();
+      }
       //create credential from accesstoken
       final facebookAuthCredential =
-          FacebookAuthProvider.credential(accessToken.token);
+          FacebookAuthProvider.credential(loginResult.accessToken!.token);
 
       final userCredential =
           await _firebaseAuth.signInWithCredential(facebookAuthCredential);
 
       //save user details in firebase of new users
-      if (userCredential.additionalUserInfo.isNewUser) await createUser();
-    } on FacebookAuthException catch (e) {
+      if (userCredential.additionalUserInfo?.isNewUser ?? false)
+        await createUser();
+    } on Exception catch (_) {
       throw const AuthFailure.signInFailure();
     }
   }
@@ -54,18 +58,26 @@ class AuthRepo implements IAuthRepo {
   Future<void> loginWithGoogle() async {
     try {
       final googleUser = await _googleSignIn.signIn();
+
+      // googleUser is null if signIn process is aborted
+      if (googleUser == null) {
+        throw AuthFailure.signInCanceld();
+      }
+
       final googleAuth = await googleUser.authentication;
       final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
+
       final userCredential =
           await _firebaseAuth.signInWithCredential(credential);
 
       //save user details in firebase of new users
-      if (userCredential.additionalUserInfo.isNewUser) await createUser();
-    } on Exception catch (e) {
-      print(e);
+      if (userCredential.additionalUserInfo?.isNewUser ?? false) {
+        await createUser();
+      }
+    } on Exception catch (_) {
       throw const AuthFailure.signInFailure();
     }
   }
@@ -77,13 +89,13 @@ class AuthRepo implements IAuthRepo {
 
   @override
   Future<void> createUser() async {
-    final user = _firebaseAuth.currentUser;
+    final user = _firebaseAuth.currentUser!;
     await _firebaseFirestore.collection('users').doc(user.uid).set(
           UserData(
             uid: user.uid,
-            email: user.email,
-            displayName: user.displayName,
-            photoUrl: user.photoURL,
+            email: user.email!,
+            displayName: user.displayName!,
+            photoUrl: user.photoURL!,
             coin: 0,
           ).toJson(),
           SetOptions(merge: false),
@@ -95,9 +107,9 @@ extension on User {
   AuthUser get toDomain {
     return AuthUser(
       userId: uid,
-      email: email,
-      name: displayName,
-      photoUrl: photoURL,
+      email: email!,
+      name: displayName!,
+      photoUrl: photoURL!,
     );
   }
 }

@@ -1,11 +1,11 @@
 part of 'login_cubit.dart';
 
 @freezed
-abstract class LoginState with _$LoginState {
+class LoginState with _$LoginState {
   const factory LoginState({
-    @required Email email,
-    @required Password password,
-    @required FormzStatus status,
+    required Email email,
+    required Password password,
+    required FormzStatus status,
   }) = _LoginState;
 
   factory LoginState.initial() => LoginState(

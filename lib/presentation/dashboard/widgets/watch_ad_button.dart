@@ -1,15 +1,13 @@
-import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
-import '../../../app_config.dart' as CONFIG;
 
 class WatchAdButton extends StatelessWidget {
-  final void Function() onTap;
+  final void Function()? onTap;
   final String text;
 
   const WatchAdButton({
-    Key key,
-    @required this.onTap,
-    @required this.text,
+    Key? key,
+    this.onTap,
+    required this.text,
   }) : super(key: key);
 
   @override

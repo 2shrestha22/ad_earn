@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'ad_cubit.dart';
 
@@ -9,58 +10,75 @@ part of 'ad_cubit.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$AdStateTearOff {
   const _$AdStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _AdLoadFailure adLoadFailure() {
     return const _AdLoadFailure();
   }
 
-// ignore: unused_element
   _AdLoadInProgress adLoadInProgress() {
     return const _AdLoadInProgress();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $AdState = _$AdStateTearOff();
 
 /// @nodoc
 mixin _$AdState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult adLoadFailure(),
-    @required TResult adLoadInProgress(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() adLoadFailure,
+    required TResult Function() adLoadInProgress,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult adLoadFailure(),
-    TResult adLoadInProgress(),
-    @required TResult orElse(),
-  });
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adLoadFailure,
+    TResult Function()? adLoadInProgress,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult adLoadFailure(_AdLoadFailure value),
-    @required TResult adLoadInProgress(_AdLoadInProgress value),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adLoadFailure,
+    TResult Function()? adLoadInProgress,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult adLoadFailure(_AdLoadFailure value),
-    TResult adLoadInProgress(_AdLoadInProgress value),
-    @required TResult orElse(),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_AdLoadFailure value) adLoadFailure,
+    required TResult Function(_AdLoadInProgress value) adLoadInProgress,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_AdLoadFailure value)? adLoadFailure,
+    TResult Function(_AdLoadInProgress value)? adLoadInProgress,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_AdLoadFailure value)? adLoadFailure,
+    TResult Function(_AdLoadInProgress value)? adLoadInProgress,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -95,6 +113,7 @@ class __$InitialCopyWithImpl<$Res> extends _$AdStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -105,7 +124,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -113,26 +133,32 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult adLoadFailure(),
-    @required TResult adLoadInProgress(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() adLoadFailure,
+    required TResult Function() adLoadInProgress,
   }) {
-    assert(initial != null);
-    assert(adLoadFailure != null);
-    assert(adLoadInProgress != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult adLoadFailure(),
-    TResult adLoadInProgress(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adLoadFailure,
+    TResult Function()? adLoadInProgress,
   }) {
-    assert(orElse != null);
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adLoadFailure,
+    TResult Function()? adLoadInProgress,
+    required TResult orElse(),
+  }) {
     if (initial != null) {
       return initial();
     }
@@ -141,26 +167,32 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult adLoadFailure(_AdLoadFailure value),
-    @required TResult adLoadInProgress(_AdLoadInProgress value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_AdLoadFailure value) adLoadFailure,
+    required TResult Function(_AdLoadInProgress value) adLoadInProgress,
   }) {
-    assert(initial != null);
-    assert(adLoadFailure != null);
-    assert(adLoadInProgress != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult adLoadFailure(_AdLoadFailure value),
-    TResult adLoadInProgress(_AdLoadInProgress value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_AdLoadFailure value)? adLoadFailure,
+    TResult Function(_AdLoadInProgress value)? adLoadInProgress,
   }) {
-    assert(orElse != null);
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_AdLoadFailure value)? adLoadFailure,
+    TResult Function(_AdLoadInProgress value)? adLoadInProgress,
+    required TResult orElse(),
+  }) {
     if (initial != null) {
       return initial(this);
     }
@@ -191,6 +223,7 @@ class __$AdLoadFailureCopyWithImpl<$Res> extends _$AdStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_AdLoadFailure implements _AdLoadFailure {
   const _$_AdLoadFailure();
 
@@ -201,7 +234,8 @@ class _$_AdLoadFailure implements _AdLoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AdLoadFailure);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _AdLoadFailure);
   }
 
   @override
@@ -209,26 +243,32 @@ class _$_AdLoadFailure implements _AdLoadFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult adLoadFailure(),
-    @required TResult adLoadInProgress(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() adLoadFailure,
+    required TResult Function() adLoadInProgress,
   }) {
-    assert(initial != null);
-    assert(adLoadFailure != null);
-    assert(adLoadInProgress != null);
     return adLoadFailure();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult adLoadFailure(),
-    TResult adLoadInProgress(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adLoadFailure,
+    TResult Function()? adLoadInProgress,
   }) {
-    assert(orElse != null);
+    return adLoadFailure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adLoadFailure,
+    TResult Function()? adLoadInProgress,
+    required TResult orElse(),
+  }) {
     if (adLoadFailure != null) {
       return adLoadFailure();
     }
@@ -237,26 +277,32 @@ class _$_AdLoadFailure implements _AdLoadFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult adLoadFailure(_AdLoadFailure value),
-    @required TResult adLoadInProgress(_AdLoadInProgress value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_AdLoadFailure value) adLoadFailure,
+    required TResult Function(_AdLoadInProgress value) adLoadInProgress,
   }) {
-    assert(initial != null);
-    assert(adLoadFailure != null);
-    assert(adLoadInProgress != null);
     return adLoadFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult adLoadFailure(_AdLoadFailure value),
-    TResult adLoadInProgress(_AdLoadInProgress value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_AdLoadFailure value)? adLoadFailure,
+    TResult Function(_AdLoadInProgress value)? adLoadInProgress,
   }) {
-    assert(orElse != null);
+    return adLoadFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_AdLoadFailure value)? adLoadFailure,
+    TResult Function(_AdLoadInProgress value)? adLoadInProgress,
+    required TResult orElse(),
+  }) {
     if (adLoadFailure != null) {
       return adLoadFailure(this);
     }
@@ -287,6 +333,7 @@ class __$AdLoadInProgressCopyWithImpl<$Res> extends _$AdStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_AdLoadInProgress implements _AdLoadInProgress {
   const _$_AdLoadInProgress();
 
@@ -297,7 +344,8 @@ class _$_AdLoadInProgress implements _AdLoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AdLoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _AdLoadInProgress);
   }
 
   @override
@@ -305,26 +353,32 @@ class _$_AdLoadInProgress implements _AdLoadInProgress {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult adLoadFailure(),
-    @required TResult adLoadInProgress(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() adLoadFailure,
+    required TResult Function() adLoadInProgress,
   }) {
-    assert(initial != null);
-    assert(adLoadFailure != null);
-    assert(adLoadInProgress != null);
     return adLoadInProgress();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult adLoadFailure(),
-    TResult adLoadInProgress(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adLoadFailure,
+    TResult Function()? adLoadInProgress,
   }) {
-    assert(orElse != null);
+    return adLoadInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adLoadFailure,
+    TResult Function()? adLoadInProgress,
+    required TResult orElse(),
+  }) {
     if (adLoadInProgress != null) {
       return adLoadInProgress();
     }
@@ -333,26 +387,32 @@ class _$_AdLoadInProgress implements _AdLoadInProgress {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult adLoadFailure(_AdLoadFailure value),
-    @required TResult adLoadInProgress(_AdLoadInProgress value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_AdLoadFailure value) adLoadFailure,
+    required TResult Function(_AdLoadInProgress value) adLoadInProgress,
   }) {
-    assert(initial != null);
-    assert(adLoadFailure != null);
-    assert(adLoadInProgress != null);
     return adLoadInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult adLoadFailure(_AdLoadFailure value),
-    TResult adLoadInProgress(_AdLoadInProgress value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_AdLoadFailure value)? adLoadFailure,
+    TResult Function(_AdLoadInProgress value)? adLoadInProgress,
   }) {
-    assert(orElse != null);
+    return adLoadInProgress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_AdLoadFailure value)? adLoadFailure,
+    TResult Function(_AdLoadInProgress value)? adLoadInProgress,
+    required TResult orElse(),
+  }) {
     if (adLoadInProgress != null) {
       return adLoadInProgress(this);
     }

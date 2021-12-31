@@ -15,7 +15,7 @@ class AdRepo implements IAdRepo {
     try {
       await _firebaseFirestore
           .collection('users')
-          .doc(_firebaseAuth.currentUser.uid)
+          .doc(_firebaseAuth.currentUser!.uid)
           .update({'coin': FieldValue.increment(coin)});
     } catch (e) {
       throw Exception();

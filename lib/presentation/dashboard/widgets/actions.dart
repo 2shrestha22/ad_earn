@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class DashboardActions extends StatelessWidget {
   const DashboardActions({
-    Key key,
-    @required this.iconPath,
-    @required this.desc,
+    Key? key,
+    required this.iconPath,
+    required this.desc,
   }) : super(key: key);
 
   final String iconPath;

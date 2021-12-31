@@ -13,7 +13,7 @@ part 'auth_bloc.freezed.dart';
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final IAuthRepo _authRepo;
-  StreamSubscription<AuthUser> _userSubscription;
+  StreamSubscription<AuthUser>? _userSubscription;
 
   AuthBloc(this._authRepo) : super(const _Initial()) {
     _userSubscription = _authRepo.user.listen(
@@ -21,31 +21,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         add(AuthEvent.authenticationUserChanged(user: user));
       },
     );
-  }
 
-  @override
-  Stream<AuthState> mapEventToState(
-    AuthEvent event,
-  ) async* {
-    yield* event.map(
-        started: (e) async* {},
-        authenticationUserChanged: (event) async* {
-          yield event.user != AuthUser.empty()
-              ? AuthState.authenticated(event.user)
-              : const AuthState.unauthenticated();
-        },
-        logoutRequested: (e) async* {
-          await _authRepo.logOut();
-        });
-  }
+    // on((_Started event, emit) {});
+    on((_AuthenticationUserChanged event, emit) {
+      emit(event.user != AuthUser.empty()
+          ? AuthState.authenticated(event.user)
+          : const AuthState.unauthenticated());
+    });
 
-  // AuthState _mapAuthenticationUserChangedToState(
-  //   _AuthenticationUserChanged event,
-  // ) {
-  //   return event.user != AppUser.empty()
-  //       ? AuthState.authenticated(event.user)
-  //       : const AuthState.unauthenticated();
-  // }
+    on((_LogoutRequested logoutRequested, emit) {
+      _authRepo.logOut();
+    });
+  }
 
   @override
   Future<void> close() {

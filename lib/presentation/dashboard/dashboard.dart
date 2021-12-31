@@ -1,7 +1,7 @@
-import 'package:firebase_admob/firebase_admob.dart';
-import 'package:flushbar/flushbar_helper.dart';
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../app_config.dart';
 import '../../application/ad/ad_cubit.dart';
@@ -22,11 +22,11 @@ class DashBoardPage extends StatefulWidget {
 }
 
 class _DashBoardPageState extends State<DashBoardPage> {
-  BannerAd myBanner;
+  BannerAd? myBanner;
 
   @override
   void dispose() {
-    myBanner..dispose();
+    myBanner?.dispose();
     super.dispose();
   }
 
@@ -45,25 +45,29 @@ class _DashBoardPageState extends State<DashBoardPage> {
       adUnitId: rewardedAdUnitId,
       size: AdSize.banner,
       // targetingInfo: targetingInfo,
-      listener: (MobileAdEvent event) {
-        print("BannerAd event is $event");
 
-        if (event == MobileAdEvent.loaded) {
-          myBanner.show(
-            // Positions the banner ad 60 pixels from the bottom of the screen
-            anchorOffset: 60.0,
-            // Positions the banner ad 10 pixels from the center of the screen to the right
-            horizontalCenterOffset: 10.0,
-            // Banner Position
-            anchorType: AnchorType.bottom,
-          );
-        }
-      },
+      listener: BannerAdListener(),
+
+      // listener: (MobileAdEvent event) {
+      //   print("BannerAd event is $event");
+
+      //   if (event == MobileAdEvent.loaded) {
+      //     myBanner?.show(
+      //       // Positions the banner ad 60 pixels from the bottom of the screen
+      //       anchorOffset: 60.0,
+      //       // Positions the banner ad 10 pixels from the center of the screen to the right
+      //       horizontalCenterOffset: 10.0,
+      //       // Banner Position
+      //       anchorType: AnchorType.bottom,
+      //     );
+      //   }
+      // },
+      request: AdRequest(),
     );
 
     myBanner
       // typically this happens well before the ad is shown
-      ..load();
+      ?..load();
   }
 
   @override
@@ -161,13 +165,14 @@ class _DashBoardPageState extends State<DashBoardPage> {
                               ),
                               BlocConsumer<AdCubit, AdState>(
                                 listener: (context, state) {
-                                  state.maybeMap(
+                                  state.maybeWhen(
                                     orElse: () {},
-                                    adLoadFailure: (_) =>
-                                        FlushbarHelper.createError(
-                                            message:
-                                                'You have viewed to many ads, try again later.')
-                                          ..show(context),
+                                    adLoadFailure: () {
+                                      FlushbarHelper.createError(
+                                          message:
+                                              'You have viewed to many ads, try again later.')
+                                        ..show(context);
+                                    },
                                   );
                                 },
                                 builder: (context, state) {

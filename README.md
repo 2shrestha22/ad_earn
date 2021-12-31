@@ -1,4 +1,4 @@
-# adapp
+# ad_earn
 
 A new Flutter project.
 

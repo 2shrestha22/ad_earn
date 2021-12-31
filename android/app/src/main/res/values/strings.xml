@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">AdEarn</string>
-    <string name="facebook_app_id">821684985074854</string>
-    <string name="fb_login_protocol_scheme">fb821684985074854</string>
-    <string name="admob_app_id">ca-app-pub-2524142559921106~3095468799</string>
-</resources>

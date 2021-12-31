@@ -16,9 +16,9 @@ class UserRepo implements IUserRepo {
   Stream<UserData> getUserData() async* {
     yield* _firebaseFirestore
         .collection('users')
-        .doc(_firebaseAuth.currentUser.uid)
+        .doc(_firebaseAuth.currentUser!.uid)
         .snapshots()
-        .map((snapshot) => UserData.fromJson(snapshot.data()));
+        .map((snapshot) => UserData.fromJson(snapshot.data()!));
   }
 
   @override
